@@ -1,22 +1,216 @@
 #include <iostream>
+#include <fstream>
 #include <cstring>
+#include <string>
+#include <sstream>
 #include <unistd.h>
 #include <arpa/inet.h>
+#include <sqlite3.h>
+
+using namespace std;
+
+string DB_PATH = "../database.db";
+
+void write_log(const string& log_file, const string& source, const string& action, const string& details) {
+    ofstream log(log_file, ios::app);
+    if (log.is_open()) {
+        log << "[" << source << "] " << action << " - " << details << endl;
+        log.close();
+    }
+}
+
+bool execute_sql(const string& sql, string& error_message) {
+    sqlite3* db;
+    char* err_msg = nullptr;
+
+    int rc = sqlite3_open(DB_PATH.c_str(), &db);
+    if (rc != SQLITE_OK) {
+        error_message = "No se pudo abrir la base de datos";
+        sqlite3_close(db);
+        return false;
+    }
+
+    rc = sqlite3_exec(db, sql.c_str(), nullptr, nullptr, &err_msg);
+    if (rc != SQLITE_OK) {
+        error_message = err_msg ? err_msg : "Error SQL";
+        sqlite3_free(err_msg);
+        sqlite3_close(db);
+        return false;
+    }
+
+    sqlite3_close(db);
+    return true;
+}
+
+bool validate_sensor_token(const string& sensor_id, const string& token) {
+    sqlite3* db;
+    sqlite3_stmt* stmt;
+    bool valid = false;
+
+    int rc = sqlite3_open(DB_PATH.c_str(), &db);
+    if (rc != SQLITE_OK) {
+        sqlite3_close(db);
+        return false;
+    }
+
+    string sql = "SELECT COUNT(*) FROM sensors WHERE id = ? AND token = ? AND status = 'active';";
+
+    rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    if (rc == SQLITE_OK) {
+        sqlite3_bind_text(stmt, 1, sensor_id.c_str(), -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(stmt, 2, token.c_str(), -1, SQLITE_TRANSIENT);
+
+        if (sqlite3_step(stmt) == SQLITE_ROW) {
+            int count = sqlite3_column_int(stmt, 0);
+            valid = (count > 0);
+        }
+    }
+
+    sqlite3_finalize(stmt);
+    sqlite3_close(db);
+    return valid;
+}
+
+bool insert_reading(const string& sensor_id, double value, string& error_message) {
+    sqlite3* db;
+    sqlite3_stmt* stmt;
+
+    int rc = sqlite3_open(DB_PATH.c_str(), &db);
+    if (rc != SQLITE_OK) {
+        error_message = "No se pudo abrir la base de datos";
+        sqlite3_close(db);
+        return false;
+    }
+
+    string sql = "INSERT INTO readings (sensor_id, value) VALUES (?, ?);";
+
+    rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    if (rc != SQLITE_OK) {
+        error_message = "Error preparando INSERT de lectura";
+        sqlite3_close(db);
+        return false;
+    }
+
+    sqlite3_bind_text(stmt, 1, sensor_id.c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_double(stmt, 2, value);
+
+    rc = sqlite3_step(stmt);
+    if (rc != SQLITE_DONE) {
+        error_message = "Error insertando lectura";
+        sqlite3_finalize(stmt);
+        sqlite3_close(db);
+        return false;
+    }
+
+    sqlite3_finalize(stmt);
+    sqlite3_close(db);
+    return true;
+}
+
+bool insert_alert(const string& sensor_id, const string& level, const string& message, string& error_message) {
+    sqlite3* db;
+    sqlite3_stmt* stmt;
+
+    int rc = sqlite3_open(DB_PATH.c_str(), &db);
+    if (rc != SQLITE_OK) {
+        error_message = "No se pudo abrir la base de datos";
+        sqlite3_close(db);
+        return false;
+    }
+
+    string sql = "INSERT INTO alerts (sensor_id, level, message) VALUES (?, ?, ?);";
+
+    rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    if (rc != SQLITE_OK) {
+        error_message = "Error preparando INSERT de alerta";
+        sqlite3_close(db);
+        return false;
+    }
+
+    sqlite3_bind_text(stmt, 1, sensor_id.c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 2, level.c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 3, message.c_str(), -1, SQLITE_TRANSIENT);
+
+    rc = sqlite3_step(stmt);
+    if (rc != SQLITE_DONE) {
+        error_message = "Error insertando alerta";
+        sqlite3_finalize(stmt);
+        sqlite3_close(db);
+        return false;
+    }
+
+    sqlite3_finalize(stmt);
+    sqlite3_close(db);
+    return true;
+}
+
+string process_message(const string& message, const string& log_file) {
+    stringstream ss(message);
+    string command;
+
+    ss >> command;
+
+    if (command == "SEND_READING") {
+        string sensor_id, token;
+        double value;
+
+        ss >> sensor_id >> token >> value;
+
+        if (sensor_id.empty() || token.empty() || ss.fail()) {
+            write_log(log_file, "SERVER", "ERROR", "Formato invalido en SEND_READING");
+            return "ERROR formato_invalido\n";
+        }
+
+        if (!validate_sensor_token(sensor_id, token)) {
+            write_log(log_file, "SERVER", "ERROR", "Token invalido para sensor " + sensor_id);
+            return "ERROR token_invalido\n";
+        }
+
+        string error_message;
+        if (!insert_reading(sensor_id, value, error_message)) {
+            write_log(log_file, "SERVER", "ERROR", "No se pudo guardar lectura: " + error_message);
+            return "ERROR no_se_pudo_guardar_lectura\n";
+        }
+
+        write_log(log_file, "SENSOR", "READING_SAVED", "Sensor " + sensor_id + " valor=" + to_string(value));
+
+        // Regla simple de alerta para vibracion
+        if (value > 8.5) {
+            string alert_message = "Vibracion alta detectada";
+            if (insert_alert(sensor_id, "high", alert_message, error_message)) {
+                write_log(log_file, "ALERT", "CREATED", "Sensor " + sensor_id + " -> " + alert_message);
+            }
+        }
+
+        return "OK lectura_guardada\n";
+    }
+
+    if (command == "GET_SENSORS") {
+        write_log(log_file, "CLIENT", "GET_SENSORS", "Consulta de sensores recibida");
+        return "OK consulta_recibida\n";
+    }
+
+    write_log(log_file, "SERVER", "ERROR", "Comando no reconocido: " + command);
+    return "ERROR comando_no_reconocido\n";
+}
 
 int main(int argc, char* argv[]) {
     if (argc < 3) {
-        std::cerr << "Uso: ./server <puerto> <archivo_logs>" << std::endl;
+        cerr << "Uso: ./server <puerto> <archivo_logs>" << endl;
         return 1;
     }
 
-    int port = std::stoi(argv[1]);
-    const char* log_file = argv[2];
+    int port = stoi(argv[1]);
+    string log_file = argv[2];
 
     int server_fd = socket(AF_INET, SOCK_STREAM, 0);
     if (server_fd == 0) {
-        std::cerr << "Error creando socket" << std::endl;
+        cerr << "Error creando socket" << endl;
         return 1;
     }
+
+    int opt = 1;
+    setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
 
     sockaddr_in address;
     address.sin_family = AF_INET;
@@ -24,17 +218,19 @@ int main(int argc, char* argv[]) {
     address.sin_port = htons(port);
 
     if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) < 0) {
-        std::cerr << "Error en bind" << std::endl;
+        cerr << "Error en bind" << endl;
+        close(server_fd);
         return 1;
     }
 
     if (listen(server_fd, 5) < 0) {
-        std::cerr << "Error en listen" << std::endl;
+        cerr << "Error en listen" << endl;
+        close(server_fd);
         return 1;
     }
 
-    std::cout << "Servidor escuchando en puerto " << port << std::endl;
-    std::cout << "Archivo de logs: " << log_file << std::endl;
+    cout << "Servidor escuchando en puerto " << port << endl;
+    cout << "Archivo de logs: " << log_file << endl;
 
     while (true) {
         sockaddr_in client_addr;
@@ -42,7 +238,7 @@ int main(int argc, char* argv[]) {
 
         int client_socket = accept(server_fd, (struct sockaddr*)&client_addr, &client_len);
         if (client_socket < 0) {
-            std::cerr << "Error aceptando cliente" << std::endl;
+            cerr << "Error aceptando cliente" << endl;
             continue;
         }
 
@@ -50,8 +246,12 @@ int main(int argc, char* argv[]) {
         int bytes = read(client_socket, buffer, sizeof(buffer) - 1);
 
         if (bytes > 0) {
-            std::cout << "Mensaje recibido: " << buffer << std::endl;
-            std::string response = "OK mensaje recibido\n";
+            string message(buffer);
+            cout << "Mensaje recibido: " << message << endl;
+
+            write_log(log_file, "SERVER", "MESSAGE_RECEIVED", message);
+
+            string response = process_message(message, log_file);
             send(client_socket, response.c_str(), response.size(), 0);
         }
 

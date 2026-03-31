@@ -2,15 +2,15 @@ CREATE TABLE users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT NOT NULL UNIQUE,
     password TEXT NOT NULL,
-    role TEXT NOT NULL
+    role TEXT NOT NULL CHECK(role IN ('admin', 'operator'))
 );
 
 CREATE TABLE sensors (
     id TEXT PRIMARY KEY,
     type TEXT NOT NULL,
     location TEXT NOT NULL,
-    token TEXT NOT NULL,
-    status TEXT NOT NULL
+    token TEXT NOT NULL UNIQUE,
+    status TEXT NOT NULL CHECK(status IN ('active', 'inactive', 'maintenance'))
 );
 
 CREATE TABLE readings (
@@ -24,7 +24,7 @@ CREATE TABLE readings (
 CREATE TABLE alerts (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     sensor_id TEXT NOT NULL,
-    level TEXT NOT NULL,
+    level TEXT NOT NULL CHECK(level IN ('low', 'medium', 'high', 'critical')),
     message TEXT NOT NULL,
     timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (sensor_id) REFERENCES sensors(id)
