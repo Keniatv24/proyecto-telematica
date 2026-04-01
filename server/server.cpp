@@ -3,6 +3,7 @@
 #include <cstring>
 #include <string>
 #include <sstream>
+#include <vector>
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <sqlite3.h>
@@ -17,29 +18,6 @@ void write_log(const string& log_file, const string& source, const string& actio
         log << "[" << source << "] " << action << " - " << details << endl;
         log.close();
     }
-}
-
-bool execute_sql(const string& sql, string& error_message) {
-    sqlite3* db;
-    char* err_msg = nullptr;
-
-    int rc = sqlite3_open(DB_PATH.c_str(), &db);
-    if (rc != SQLITE_OK) {
-        error_message = "No se pudo abrir la base de datos";
-        sqlite3_close(db);
-        return false;
-    }
-
-    rc = sqlite3_exec(db, sql.c_str(), nullptr, nullptr, &err_msg);
-    if (rc != SQLITE_OK) {
-        error_message = err_msg ? err_msg : "Error SQL";
-        sqlite3_free(err_msg);
-        sqlite3_close(db);
-        return false;
-    }
-
-    sqlite3_close(db);
-    return true;
 }
 
 bool validate_sensor_token(const string& sensor_id, const string& token) {
@@ -144,6 +122,47 @@ bool insert_alert(const string& sensor_id, const string& level, const string& me
     return true;
 }
 
+string get_sensors_response() {
+    sqlite3* db;
+    sqlite3_stmt* stmt;
+    string response = "SENSORS\n";
+
+    int rc = sqlite3_open(DB_PATH.c_str(), &db);
+    if (rc != SQLITE_OK) {
+        sqlite3_close(db);
+        return "ERROR no_se_pudo_abrir_db\n";
+    }
+
+    string sql = "SELECT id, type, location, status FROM sensors ORDER BY id;";
+
+    rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    if (rc != SQLITE_OK) {
+        sqlite3_close(db);
+        return "ERROR consulta_sensores_fallida\n";
+    }
+
+    bool has_rows = false;
+
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        has_rows = true;
+        string id = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
+        string type = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
+        string location = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
+        string status = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
+
+        response += id + " | " + type + " | " + location + " | " + status + "\n";
+    }
+
+    sqlite3_finalize(stmt);
+    sqlite3_close(db);
+
+    if (!has_rows) {
+        return "SENSORS\nsin_resultados\n";
+    }
+
+    return response;
+}
+
 string process_message(const string& message, const string& log_file) {
     stringstream ss(message);
     string command;
@@ -174,7 +193,6 @@ string process_message(const string& message, const string& log_file) {
 
         write_log(log_file, "SENSOR", "READING_SAVED", "Sensor " + sensor_id + " valor=" + to_string(value));
 
-        // Regla simple de alerta para vibracion
         if (value > 8.5) {
             string alert_message = "Vibracion alta detectada";
             if (insert_alert(sensor_id, "high", alert_message, error_message)) {
@@ -187,7 +205,7 @@ string process_message(const string& message, const string& log_file) {
 
     if (command == "GET_SENSORS") {
         write_log(log_file, "CLIENT", "GET_SENSORS", "Consulta de sensores recibida");
-        return "OK consulta_recibida\n";
+        return get_sensors_response();
     }
 
     write_log(log_file, "SERVER", "ERROR", "Comando no reconocido: " + command);

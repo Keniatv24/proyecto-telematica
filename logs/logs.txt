@@ -581,3 +581,5 @@
 [SERVER] MESSAGE_RECEIVED - SEND_READING S001 token_vib_001 8.6
 [SENSOR] READING_SAVED - Sensor S001 valor=8.600000
 [ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
