@@ -3,7 +3,6 @@
 #include <cstring>
 #include <string>
 #include <sstream>
-#include <vector>
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <sqlite3.h>
@@ -163,6 +162,54 @@ string get_sensors_response() {
     return response;
 }
 
+string get_alerts_response() {
+    sqlite3* db;
+    sqlite3_stmt* stmt;
+    string response = "ALERTS\n";
+
+    int rc = sqlite3_open(DB_PATH.c_str(), &db);
+    if (rc != SQLITE_OK) {
+        sqlite3_close(db);
+        return "ERROR no_se_pudo_abrir_db\n";
+    }
+
+    string sql = R"(
+        SELECT alerts.id, alerts.sensor_id, sensors.type, alerts.level, alerts.message, alerts.timestamp
+        FROM alerts
+        JOIN sensors ON alerts.sensor_id = sensors.id
+        ORDER BY alerts.id DESC;
+    )";
+
+    rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    if (rc != SQLITE_OK) {
+        sqlite3_close(db);
+        return "ERROR consulta_alertas_fallida\n";
+    }
+
+    bool has_rows = false;
+
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        has_rows = true;
+        int alert_id = sqlite3_column_int(stmt, 0);
+        string sensor_id = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
+        string sensor_type = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
+        string level = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
+        string message = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
+        string timestamp = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5));
+
+        response += to_string(alert_id) + " | " + sensor_id + " | " + sensor_type + " | " + level + " | " + message + " | " + timestamp + "\n";
+    }
+
+    sqlite3_finalize(stmt);
+    sqlite3_close(db);
+
+    if (!has_rows) {
+        return "ALERTS\nsin_resultados\n";
+    }
+
+    return response;
+}
+
 string process_message(const string& message, const string& log_file) {
     stringstream ss(message);
     string command;
@@ -206,6 +253,11 @@ string process_message(const string& message, const string& log_file) {
     if (command == "GET_SENSORS") {
         write_log(log_file, "CLIENT", "GET_SENSORS", "Consulta de sensores recibida");
         return get_sensors_response();
+    }
+
+    if (command == "GET_ALERTS") {
+        write_log(log_file, "CLIENT", "GET_ALERTS", "Consulta de alertas recibida");
+        return get_alerts_response();
     }
 
     write_log(log_file, "SERVER", "ERROR", "Comando no reconocido: " + command);
