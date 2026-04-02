@@ -3,6 +3,7 @@
 #include <cstring>
 #include <string>
 #include <sstream>
+#include <thread>
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <sqlite3.h>
@@ -328,6 +329,23 @@ string process_message(const string& message, const string& log_file) {
     return "ERROR comando_no_reconocido\n";
 }
 
+void handle_client(int client_socket, string log_file) {
+    char buffer[4096] = {0};
+    int bytes = read(client_socket, buffer, sizeof(buffer) - 1);
+
+    if (bytes > 0) {
+        string message(buffer);
+        cout << "Mensaje recibido: " << message << endl;
+
+        write_log(log_file, "SERVER", "MESSAGE_RECEIVED", message);
+
+        string response = process_message(message, log_file);
+        send(client_socket, response.c_str(), response.size(), 0);
+    }
+
+    close(client_socket);
+}
+
 int main(int argc, char* argv[]) {
     if (argc < 3) {
         cerr << "Uso: ./server <puerto> <archivo_logs>" << endl;
@@ -357,13 +375,13 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    if (listen(server_fd, 5) < 0) {
+    if (listen(server_fd, 10) < 0) {
         cerr << "Error en listen" << endl;
         close(server_fd);
         return 1;
     }
 
-    cout << "Servidor escuchando en puerto " << port << endl;
+    cout << "Servidor concurrente escuchando en puerto " << port << endl;
     cout << "Archivo de logs: " << log_file << endl;
 
     while (true) {
@@ -376,20 +394,8 @@ int main(int argc, char* argv[]) {
             continue;
         }
 
-        char buffer[4096] = {0};
-        int bytes = read(client_socket, buffer, sizeof(buffer) - 1);
-
-        if (bytes > 0) {
-            string message(buffer);
-            cout << "Mensaje recibido: " << message << endl;
-
-            write_log(log_file, "SERVER", "MESSAGE_RECEIVED", message);
-
-            string response = process_message(message, log_file);
-            send(client_socket, response.c_str(), response.size(), 0);
-        }
-
-        close(client_socket);
+        thread client_thread(handle_client, client_socket, log_file);
+        client_thread.detach();
     }
 
     close(server_fd);
