@@ -3,7 +3,8 @@ import socket
 HOST = "127.0.0.1"
 PORT = 8080
 
-message = "GET_ALERTS"
+sensor_id = "S001"
+message = f"GET_READINGS {sensor_id}"
 
 try:
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

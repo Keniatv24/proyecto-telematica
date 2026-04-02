@@ -210,6 +210,57 @@ string get_alerts_response() {
     return response;
 }
 
+string get_readings_response(const string& sensor_id) {
+    sqlite3* db;
+    sqlite3_stmt* stmt;
+    string response = "READINGS\n";
+
+    int rc = sqlite3_open(DB_PATH.c_str(), &db);
+    if (rc != SQLITE_OK) {
+        sqlite3_close(db);
+        return "ERROR no_se_pudo_abrir_db\n";
+    }
+
+    string sql = R"(
+        SELECT readings.id, readings.sensor_id, sensors.type, readings.value, readings.timestamp
+        FROM readings
+        JOIN sensors ON readings.sensor_id = sensors.id
+        WHERE readings.sensor_id = ?
+        ORDER BY readings.id DESC
+        LIMIT 10;
+    )";
+
+    rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    if (rc != SQLITE_OK) {
+        sqlite3_close(db);
+        return "ERROR consulta_lecturas_fallida\n";
+    }
+
+    sqlite3_bind_text(stmt, 1, sensor_id.c_str(), -1, SQLITE_TRANSIENT);
+
+    bool has_rows = false;
+
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        has_rows = true;
+        int reading_id = sqlite3_column_int(stmt, 0);
+        string sid = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
+        string sensor_type = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
+        double value = sqlite3_column_double(stmt, 3);
+        string timestamp = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
+
+        response += to_string(reading_id) + " | " + sid + " | " + sensor_type + " | " + to_string(value) + " | " + timestamp + "\n";
+    }
+
+    sqlite3_finalize(stmt);
+    sqlite3_close(db);
+
+    if (!has_rows) {
+        return "READINGS\nsin_resultados\n";
+    }
+
+    return response;
+}
+
 string process_message(const string& message, const string& log_file) {
     stringstream ss(message);
     string command;
@@ -258,6 +309,19 @@ string process_message(const string& message, const string& log_file) {
     if (command == "GET_ALERTS") {
         write_log(log_file, "CLIENT", "GET_ALERTS", "Consulta de alertas recibida");
         return get_alerts_response();
+    }
+
+    if (command == "GET_READINGS") {
+        string sensor_id;
+        ss >> sensor_id;
+
+        if (sensor_id.empty()) {
+            write_log(log_file, "CLIENT", "GET_READINGS_ERROR", "No se envio sensor_id");
+            return "ERROR sensor_id_requerido\n";
+        }
+
+        write_log(log_file, "CLIENT", "GET_READINGS", "Consulta de lecturas para " + sensor_id);
+        return get_readings_response(sensor_id);
     }
 
     write_log(log_file, "SERVER", "ERROR", "Comando no reconocido: " + command);
@@ -312,7 +376,7 @@ int main(int argc, char* argv[]) {
             continue;
         }
 
-        char buffer[1024] = {0};
+        char buffer[4096] = {0};
         int bytes = read(client_socket, buffer, sizeof(buffer) - 1);
 
         if (bytes > 0) {
