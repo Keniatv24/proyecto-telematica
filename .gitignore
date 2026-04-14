@@ -1,0 +1,91 @@
+# .gitignore - Archivos a ignorar en control de versión
+
+################################################################################
+# ARCHIVOS COMPILADOS Y BUILD
+################################################################################
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+build/
+bin/
+cmake-build-debug/
+cmake-build-release/
+server
+*.out
+
+################################################################################
+# LOGS Y DATOS LOCALES (GENERADOS EN RUNTIME)
+################################################################################
+logs/*.log
+logs/*.txt
+logs.txt
+*.db
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+database.db
+
+################################################################################
+# TESTING Y HERRAMIENTAS DE DESARROLLO (NO CORE)
+################################################################################
+testing/
+mock_server.py
+config_sensors_example.py
+create_custom_sensor.py
+
+################################################################################
+# PYTHON
+################################################################################
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+venv/
+env/
+.env
+*.egg
+
+################################################################################
+# IDE Y EDITORES
+################################################################################
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+################################################################################
+# ARCHIVOS TEMPORALES
+################################################################################
+*.tmp
+*.bak
+.~*
+*.temp
+
+################################################################################
+# SISTEMA
+################################################################################
+.AppleDouble
+.LSOverride
+Thumbs.db
+.env.local
+.env.*.local
+secrets.txt
+.env
+config.local.json
+
+# AWS credentials (NUNCA commitear)
+*.pem
+aws-credentials.sh
+
+# Docker
+*.container
+.docker/
