@@ -1,0 +1,12 @@
+# requirements.txt - Dependencias del proyecto IoT
+
+# Sensores (sin dependencias externas - solo stdlib)
+# Python 3.8+
+
+# Para desarrollo/testing (opcional)
+pytest>=7.0
+pytest-cov>=4.0
+
+# Para servidor C++ (no incluidas aquí)
+# - g++/clang con C++17
+# - CMake 3.10+
