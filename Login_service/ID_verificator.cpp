@@ -18,45 +18,41 @@ std::string ID_verificator::Generate_random() {
 
 UserValidationResponse ID_verificator::validate_user(std::string user, std::string password) {
     UserValidationResponse response;
-    
-    // 1. Check if user exists and get the ID string
-    std::string foundID = db.Checkby_User(user);
+
+    std::string foundID = db.Checkby_User_Pass(user, password);
 
     if (foundID == "false") {
         response.id = "0";
         response.token = "0";
         response.r_token = "0";
         response.message = "information does not match";
-    } else {
-        // 2. User exists: set ID
-        response.id = foundID;
-
-        // 3. Update the refresh token in the DB with a new random value
-        std::string new_r_token = Generate_random();
-        db.Update_refresh(foundID, new_r_token);
-
-        // 4. Retrieve the token and the (now updated) refresh token from DB
-        response.token = db.Get_Token(foundID);
-        response.r_token = db.Get_Refresh(foundID);
-
-        response.message = "user located; ID, token and refresh token has been provided";
+        return response;
     }
+
+    response.id = foundID;
+
+    std::string new_token = Generate_random();
+    std::string new_r_token = Generate_random();
+
+    db.Update_Token(foundID, new_token);
+    db.Update_refresh(foundID, new_r_token);
+
+    response.token = db.Get_Token(foundID);
+    response.r_token = db.Get_Refresh(foundID);
+    response.message = "user located; ID, token and refresh token has been provided";
 
     return response;
 }
 
 std::string ID_verificator::logout(std::string id) {
-    // Generate random value and update the DB
     std::string random_val = Generate_random();
     db.Update_refresh(id, random_val);
-
     return "the refresh token was updated";
 }
 
 RoleResponse ID_verificator::get_role(std::string id) {
     RoleResponse response;
-    
-    // Execute get_role from db_manager
+
     std::string result = db.Get_Role(id);
 
     if (result == "false") {
@@ -72,22 +68,16 @@ RoleResponse ID_verificator::get_role(std::string id) {
 
 StatusResponse ID_verificator::user_statusfor(std::string id) {
     StatusResponse response;
-    
-    // Set the ID in the response
     response.id = id;
 
-    // Call the Get_status function from the db_manager
     bool isActive = db.Get_Status(id);
 
-    // Determine status string based on the boolean result
     if (isActive) {
         response.status = "active";
     } else {
         response.status = "inactive";
     }
 
-    // Set the success message
     response.message = "estado del usuario obtenido";
-
     return response;
-}
+} 

@@ -1,0 +1,15 @@
+--- LOG FILE CREATED ---
+[Tue Apr 21 00:34:40 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided (active)
+[Tue Apr 21 00:34:40 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided
+[Tue Apr 21 00:35:46 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided (active)
+[Tue Apr 21 00:35:46 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided
+[Tue Apr 21 00:36:08 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided (active)
+[Tue Apr 21 00:36:08 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided
+[Tue Apr 21 00:56:53 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided (active)
+[Tue Apr 21 00:56:54 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided
+[Tue Apr 21 00:56:54 2026] | ID: 0000000001 | MSG: user found, role returned
+[Tue Apr 21 00:56:54 2026] | ID: 0000000001 | MSG: token validated and information was updated
+[Tue Apr 21 00:58:16 2026] | ID: 0000000001 | MSG: token validated and information was updated
+[Tue Apr 21 01:00:05 2026] | ID: 0000000001 | MSG: token validated and information was updated
+[Tue Apr 21 01:00:13 2026] | ID: 0000000001 | MSG: token validated and information was updated
+[Tue Apr 21 01:00:13 2026] | ID: 0000000001 | MSG: the refresh token was updated

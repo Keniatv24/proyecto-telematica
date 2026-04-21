@@ -251,6 +251,48 @@ bool insert_alert(const string& sensor_id, const string& level, const string& me
     return true;
 }
 
+bool acknowledge_alert_db(int alert_id, string& error_message) {
+    sqlite3* db = nullptr;
+    sqlite3_stmt* stmt = nullptr;
+
+    int rc = sqlite3_open(DB_PATH.c_str(), &db);
+    if (rc != SQLITE_OK) {
+        error_message = "No se pudo abrir la base de datos";
+        if (db) sqlite3_close(db);
+        return false;
+    }
+
+    string sql = "DELETE FROM alerts WHERE id = ?;";
+    rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    if (rc != SQLITE_OK) {
+        error_message = "Error preparando DELETE de alerta";
+        sqlite3_close(db);
+        return false;
+    }
+
+    sqlite3_bind_int(stmt, 1, alert_id);
+
+    rc = sqlite3_step(stmt);
+    if (rc != SQLITE_DONE) {
+        error_message = "Error eliminando alerta";
+        sqlite3_finalize(stmt);
+        sqlite3_close(db);
+        return false;
+    }
+
+    int changes = sqlite3_changes(db);
+
+    sqlite3_finalize(stmt);
+    sqlite3_close(db);
+
+    if (changes == 0) {
+        error_message = "Alerta no encontrada";
+        return false;
+    }
+
+    return true;
+}
+
 void evaluate_alerts(const string& sensor_id, double value, const string& log_file) {
     string sensor_type;
     if (!get_sensor_type(sensor_id, sensor_type)) {
@@ -595,6 +637,25 @@ string process_space_message(const string& message, const string& log_file) {
 
         write_log(log_file, "CLIENT", "GET_READINGS", "Consulta de lecturas para " + sensor_id);
         return get_readings_response(sensor_id);
+    }
+
+    if (command == "ACK_ALERT") {
+        int alert_id;
+        ss >> alert_id;
+
+        if (ss.fail()) {
+            write_log(log_file, "CLIENT", "ACK_ALERT_ERROR", "No se envio alert_id valido");
+            return "ERROR alert_id_requerido\n";
+        }
+
+        string error_message;
+        if (!acknowledge_alert_db(alert_id, error_message)) {
+            write_log(log_file, "CLIENT", "ACK_ALERT_ERROR", error_message);
+            return "ERROR " + error_message + "\n";
+        }
+
+        write_log(log_file, "CLIENT", "ACK_ALERT", "Alerta confirmada: " + to_string(alert_id));
+        return "OK alert_acknowledged\n";
     }
 
     write_log(log_file, "SERVER", "ERROR", "Comando no reconocido: " + command);
