@@ -5,7 +5,7 @@
 
 struct UserCreationResponse {
     std::string id;
-    std::string user;     // This holds the "name" of the user as requested
+    std::string user;     // This holds the "name" of the user
     std::string username; // This holds the "username"
     std::string password;
     std::string message;

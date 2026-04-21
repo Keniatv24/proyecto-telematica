@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-// Struct to hold the specific fields requested
+// Struct to hold the specific fields 
 struct UserBasicInfo {
     std::string id;
     std::string user;

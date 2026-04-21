@@ -63,7 +63,6 @@ DeletionResponse User_operations::delete_user(std::string id) {
         response.message = "user has been removed";
     } else {
         // Otherwise return the ID provided and a generic message 
-        // (or you can customize this part if needed)
         response.id = id;
         response.message = "operation completed";
     }
