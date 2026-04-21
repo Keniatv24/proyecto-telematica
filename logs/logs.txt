@@ -1061,3 +1061,1604 @@
 [SENSOR] READING_SAVED - Sensor S001 valor=7.240000
 [SERVER] MESSAGE_RECEIVED - SEND_READING S001 token_vib_001 7.4
 [SENSOR] READING_SAVED - Sensor S001 valor=7.400000
+[SERVER] MESSAGE_RECEIVED - ACK_ALERT 275
+[CLIENT] ACK_ALERT_ERROR - Error preparando DELETE de alerta
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - ACK_ALERT 275
+[CLIENT] ACK_ALERT_ERROR - Error preparando DELETE de alerta
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - ACK_ALERT 275
+[CLIENT] ACK_ALERT_ERROR - Error preparando DELETE de alerta
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - ACK_ALERT 275
+[CLIENT] ACK_ALERT_ERROR - Alerta no encontrada
+[SERVER] MESSAGE_RECEIVED - ACK_ALERT 1
+[CLIENT] ACK_ALERT - Alerta confirmada: 1
+[SERVER] MESSAGE_RECEIVED - ACK_ALERT 1
+[CLIENT] ACK_ALERT_ERROR - Alerta no encontrada
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|1
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|9
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|80
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|20
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|55
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|5
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|4
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|49
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|32
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|29
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|0
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|28
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|43
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|33
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|4
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|0
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|23
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|32
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|21
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|14
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|4
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|1
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|59
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|34
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|39
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|15
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|7
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|48
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|41
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|2
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|5
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|21
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|50
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|50
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|58
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|4
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|23
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|54
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|49
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|33
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|5
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|0
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|80
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|54
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|48
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|3
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|3
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|36
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|46
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|42
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|19
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|26
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|56
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|20
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|8
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|22
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|7
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|70
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|53
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|21
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|13
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|9
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|57
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|27
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|25
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|18
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|7
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|52
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|43
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|57
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|3
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|30
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|65
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|21
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|15
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|3
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|3
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|81
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|29
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|47
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|0
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|4
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|63
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|20
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|34
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|1
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|8
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|77
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|28
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|21
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|5
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|26
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|66
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|31
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|46
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|1
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|4
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|43
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|29
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|50
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|19
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|10
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|57
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|27
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|40
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|2
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|10
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|48
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|50
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|57
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|3
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|8
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|83
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|33
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|3
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|5
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|9
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|61
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|30
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|47
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|14
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|6
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|80
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|23
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|23
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|5
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|7
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|46
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|35
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|20
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|4
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|1
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|35
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|22
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|28
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|1
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|5
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|58
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|35
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|57
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|2
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|1
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|82
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|33
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|55
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|21
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|1
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|40
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|25
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|21
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|19
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|10
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|42
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|55
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|2
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|22
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|3
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|63
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|29
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|48
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|0
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|4
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|32
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|34
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|33
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|21
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|22
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|42
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|32
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|67
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|5
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|4
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|56
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|32
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|69
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|2
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|16
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|43
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|29
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|34
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|23
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|10
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|86
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|30
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|42
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|10
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|6
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|80
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|34
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|12
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|22
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|5
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|55
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|52
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|39
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|0
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|17
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|63
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|53
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|3
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|5
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|9
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|31
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|28
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|2
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|26
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|38
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|28
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|28
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|2
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|4
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|56
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|25
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|36
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|0
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|4
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|63
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|24
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|24
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|23
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|2
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|66
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|51
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|18
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|2
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|8
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|45
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|30
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|31
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|21
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|0
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|75
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|21
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|35
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|4
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|0
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|36
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|26
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|26
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|0
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|0
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|89
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|23
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|57
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|4
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|7
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|36
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|54
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|17
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|0
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|26
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|67
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|20
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|14
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|2
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S002|inclination|7
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S003|humidity|38
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S004|temperature|33
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S005|stress|1
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - SENSOR|S001|vibration|2
+[SERVER] ERROR - Comando con pipes no reconocido: SENSOR
+[SERVER] MESSAGE_RECEIVED - REGISTER|S001|vibration|puente_norte|mm/s|token_vib_001
+[SENSOR] REGISTERED - Sensor S001 tipo=vibration ubicacion=puente_norte unidad=mm/s
+[SERVER] MESSAGE_RECEIVED - REGISTER|S002|inclination|puente_norte|deg|token_inc_002
+[SENSOR] REGISTERED - Sensor S002 tipo=inclination ubicacion=puente_norte unidad=deg
+[SERVER] MESSAGE_RECEIVED - REGISTER|S003|humidity|edificio_bloque_a|%|token_hum_003
+[SENSOR] REGISTERED - Sensor S003 tipo=humidity ubicacion=edificio_bloque_a unidad=%
+[SERVER] MESSAGE_RECEIVED - REGISTER|S004|temperature|edificio_bloque_a|C|token_temp_004
+[SENSOR] REGISTERED - Sensor S004 tipo=temperature ubicacion=edificio_bloque_a unidad=C
+[SERVER] MESSAGE_RECEIVED - REGISTER|S005|stress|puente_norte|MPa|token_str_005
+[SENSOR] REGISTERED - Sensor S005 tipo=stress ubicacion=puente_norte unidad=MPa
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|16.7|1776755942
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=16.700000 timestamp=1776755942
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|2.1|1776755943
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=2.100000 timestamp=1776755943
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|45.8|1776755944
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=45.800000 timestamp=1776755944
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|27.2|1776755946
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=27.200000 timestamp=1776755946
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|41.9|1776755947
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=41.900000 timestamp=1776755947
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|1.2|1776755950
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=1.200000 timestamp=1776755950
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|15.9|1776755951
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=15.900000 timestamp=1776755951
+[ALERT] CREATED - Sensor S002 -> Inclinacion anomala detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|47.6|1776755953
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=47.600000 timestamp=1776755953
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|24.5|1776755954
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=24.500000 timestamp=1776755954
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|40.3|1776755955
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=40.300000 timestamp=1776755955
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|17.8|1776755958
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=17.800000 timestamp=1776755958
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|3.6|1776755960
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=3.600000 timestamp=1776755960
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|43.9|1776755961
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=43.900000 timestamp=1776755961
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|22.1|1776755962
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=22.100000 timestamp=1776755962
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|33.2|1776755964
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=33.200000 timestamp=1776755964
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|12.9|1776755967
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=12.900000 timestamp=1776755967
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|6.4|1776755968
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=6.400000 timestamp=1776755968
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|42.7|1776755969
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=42.700000 timestamp=1776755969
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|44.8|1776755971
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=44.800000 timestamp=1776755971
+[ALERT] CREATED - Sensor S004 -> Temperatura alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|65.2|1776755972
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=65.200000 timestamp=1776755972
+[ALERT] CREATED - Sensor S005 -> Esfuerzo estructural alto detectado
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|12.1|1776755975
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=12.100000 timestamp=1776755975
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|3.3|1776755976
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=3.300000 timestamp=1776755976
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|75.1|1776755978
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=75.100000 timestamp=1776755978
+[ALERT] CREATED - Sensor S003 -> Humedad alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|39.0|1776755979
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=39.000000 timestamp=1776755979
+[ALERT] CREATED - Sensor S004 -> Temperatura alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|19.6|1776755981
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=19.600000 timestamp=1776755981
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|17.3|1776755984
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=17.300000 timestamp=1776755984
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|19.6|1776755986
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=19.600000 timestamp=1776755986
+[ALERT] CREATED - Sensor S002 -> Inclinacion anomala detectada
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|38.5|1776755988
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=38.500000 timestamp=1776755988
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|36.2|1776755989
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=36.200000 timestamp=1776755989
+[ALERT] CREATED - Sensor S004 -> Temperatura alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|22.1|1776755991
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=22.100000 timestamp=1776755991
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|3.0|1776755994
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=3.000000 timestamp=1776755994
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|1.2|1776755995
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=1.200000 timestamp=1776755995
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|85.3|1776755997
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=85.300000 timestamp=1776755997
+[ALERT] CREATED - Sensor S003 -> Humedad alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|23.2|1776755998
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=23.200000 timestamp=1776755998
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|39.3|1776755999
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=39.300000 timestamp=1776755999
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|2.0|1776756002
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=2.000000 timestamp=1776756002
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|14.8|1776756004
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=14.800000 timestamp=1776756004
+[ALERT] CREATED - Sensor S002 -> Inclinacion anomala detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|80.6|1776756005
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=80.600000 timestamp=1776756005
+[ALERT] CREATED - Sensor S003 -> Humedad alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|34.2|1776756006
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=34.200000 timestamp=1776756006
+[ALERT] CREATED - Sensor S004 -> Temperatura alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|79.1|1776756008
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=79.100000 timestamp=1776756008
+[ALERT] CREATED - Sensor S005 -> Esfuerzo estructural alto detectado
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|2.0|1776756011
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=2.000000 timestamp=1776756011
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|2.8|1776756012
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=2.800000 timestamp=1776756012
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|42.5|1776756013
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=42.500000 timestamp=1776756013
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|24.0|1776756015
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=24.000000 timestamp=1776756015
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|14.4|1776756016
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=14.400000 timestamp=1776756016
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|2.3|1776756019
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=2.300000 timestamp=1776756019
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|6.8|1776756020
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=6.800000 timestamp=1776756020
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|44.7|1776756022
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=44.700000 timestamp=1776756022
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|31.3|1776756023
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=31.300000 timestamp=1776756023
+[ALERT] CREATED - Sensor S004 -> Temperatura alta detectada
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|38.7|1776756024
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=38.700000 timestamp=1776756024
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|15.9|1776756028
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=15.900000 timestamp=1776756028
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|19.8|1776756029
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=19.800000 timestamp=1776756029
+[ALERT] CREATED - Sensor S002 -> Inclinacion anomala detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|55.4|1776756030
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=55.400000 timestamp=1776756030
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|24.0|1776756032
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=24.000000 timestamp=1776756032
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|32.8|1776756033
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=32.800000 timestamp=1776756033
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|13.4|1776756036
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=13.400000 timestamp=1776756036
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|6.9|1776756037
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=6.900000 timestamp=1776756037
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|49.1|1776756039
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=49.100000 timestamp=1776756039
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|22.8|1776756040
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=22.800000 timestamp=1776756040
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|24.0|1776756041
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=24.000000 timestamp=1776756041
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|11.4|1776756045
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=11.400000 timestamp=1776756045
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|17.3|1776756046
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=17.300000 timestamp=1776756046
+[ALERT] CREATED - Sensor S002 -> Inclinacion anomala detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|81.4|1776756047
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=81.400000 timestamp=1776756047
+[ALERT] CREATED - Sensor S003 -> Humedad alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|36.3|1776756049
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=36.300000 timestamp=1776756049
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[ALERT] CREATED - Sensor S004 -> Temperatura alta detectada
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|30.2|1776756050
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=30.200000 timestamp=1776756050
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|1.8|1776756053
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=1.800000 timestamp=1776756053
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|4.2|1776756055
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=4.200000 timestamp=1776756055
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|54.3|1776756056
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=54.300000 timestamp=1776756056
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|25.3|1776756057
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=25.300000 timestamp=1776756057
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|25.4|1776756058
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=25.400000 timestamp=1776756058
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|5.0|1776756062
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=5.000000 timestamp=1776756062
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|15.1|1776756063
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=15.100000 timestamp=1776756063
+[ALERT] CREATED - Sensor S002 -> Inclinacion anomala detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|36.3|1776756064
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=36.300000 timestamp=1776756064
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|23.5|1776756066
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=23.500000 timestamp=1776756066
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|40.4|1776756067
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=40.400000 timestamp=1776756067
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|12.5|1776756070
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=12.500000 timestamp=1776756070
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|5.7|1776756072
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=5.700000 timestamp=1776756072
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|36.2|1776756073
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=36.200000 timestamp=1776756073
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|23.5|1776756074
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=23.500000 timestamp=1776756074
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|41.9|1776756075
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=41.900000 timestamp=1776756075
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|3.7|1776756079
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=3.700000 timestamp=1776756079
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|6.9|1776756080
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=6.900000 timestamp=1776756080
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|77.7|1776756081
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=77.700000 timestamp=1776756081
+[ALERT] CREATED - Sensor S003 -> Humedad alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|26.2|1776756083
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=26.200000 timestamp=1776756083
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|36.2|1776756084
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=36.200000 timestamp=1776756084
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|3.8|1776756087
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=3.800000 timestamp=1776756087
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|1.2|1776756089
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=1.200000 timestamp=1776756089
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|40.4|1776756090
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=40.400000 timestamp=1776756090
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|25.6|1776756091
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=25.600000 timestamp=1776756091
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|73.0|1776756092
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=73.000000 timestamp=1776756092
+[ALERT] CREATED - Sensor S005 -> Esfuerzo estructural alto detectado
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|4.6|1776756096
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=4.600000 timestamp=1776756096
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|1.6|1776756097
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=1.600000 timestamp=1776756097
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|51.8|1776756098
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=51.800000 timestamp=1776756098
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|37.3|1776756099
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=37.300000 timestamp=1776756099
+[ALERT] CREATED - Sensor S004 -> Temperatura alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|78.8|1776756101
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=78.800000 timestamp=1776756101
+[ALERT] CREATED - Sensor S005 -> Esfuerzo estructural alto detectado
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|2.7|1776756104
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=2.700000 timestamp=1776756104
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|7.4|1776756105
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=7.400000 timestamp=1776756105
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|41.3|1776756107
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=41.300000 timestamp=1776756107
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|24.3|1776756108
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=24.300000 timestamp=1776756108
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|21.2|1776756109
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=21.200000 timestamp=1776756109
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|11.1|1776756112
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=11.100000 timestamp=1776756112
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|11.1|1776756114
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=11.100000 timestamp=1776756114
+[ALERT] CREATED - Sensor S002 -> Inclinacion anomala detectada
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|49.8|1776756115
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=49.800000 timestamp=1776756115
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|23.8|1776756116
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=23.800000 timestamp=1776756116
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|61.7|1776756117
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=61.700000 timestamp=1776756117
+[ALERT] CREATED - Sensor S005 -> Esfuerzo estructural alto detectado
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|1.3|1776756121
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=1.300000 timestamp=1776756121
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|5.5|1776756122
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=5.500000 timestamp=1776756122
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|65.0|1776756123
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=65.000000 timestamp=1776756123
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|32.1|1776756125
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=32.100000 timestamp=1776756125
+[ALERT] CREATED - Sensor S004 -> Temperatura alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|22.9|1776756126
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=22.900000 timestamp=1776756126
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|3.1|1776756129
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=3.100000 timestamp=1776756129
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|4.7|1776756130
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=4.700000 timestamp=1776756130
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|88.8|1776756132
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=88.800000 timestamp=1776756132
+[ALERT] CREATED - Sensor S003 -> Humedad alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|21.0|1776756133
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=21.000000 timestamp=1776756133
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|64.2|1776756134
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=64.200000 timestamp=1776756134
+[ALERT] CREATED - Sensor S005 -> Esfuerzo estructural alto detectado
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|4.9|1776756138
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=4.900000 timestamp=1776756138
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|19.0|1776756139
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=19.000000 timestamp=1776756139
+[ALERT] CREATED - Sensor S002 -> Inclinacion anomala detectada
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|42.6|1776756140
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=42.600000 timestamp=1776756140
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|38.0|1776756141
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=38.000000 timestamp=1776756141
+[ALERT] CREATED - Sensor S004 -> Temperatura alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|83.8|1776756143
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=83.800000 timestamp=1776756143
+[ALERT] CREATED - Sensor S005 -> Esfuerzo estructural alto detectado
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|9.3|1776756146
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=9.300000 timestamp=1776756146
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|20.9|1776756147
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=20.900000 timestamp=1776756147
+[ALERT] CREATED - Sensor S002 -> Inclinacion anomala detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|60.6|1776756149
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=60.600000 timestamp=1776756149
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|22.6|1776756150
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=22.600000 timestamp=1776756150
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|44.0|1776756151
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=44.000000 timestamp=1776756151
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|15.1|1776756154
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=15.100000 timestamp=1776756154
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|14.6|1776756156
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=14.600000 timestamp=1776756156
+[ALERT] CREATED - Sensor S002 -> Inclinacion anomala detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|76.6|1776756157
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=76.600000 timestamp=1776756157
+[ALERT] CREATED - Sensor S003 -> Humedad alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|27.2|1776756158
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=27.200000 timestamp=1776756158
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|29.9|1776756159
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=29.900000 timestamp=1776756159
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|11.4|1776756163
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=11.400000 timestamp=1776756163
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|4.9|1776756164
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=4.900000 timestamp=1776756164
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|62.3|1776756165
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=62.300000 timestamp=1776756165
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|25.5|1776756167
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=25.500000 timestamp=1776756167
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|12.2|1776756168
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=12.200000 timestamp=1776756168
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|2.5|1776756171
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=2.500000 timestamp=1776756171
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|7.7|1776756172
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=7.700000 timestamp=1776756172
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|50.7|1776756174
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=50.700000 timestamp=1776756174
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|20.2|1776756175
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=20.200000 timestamp=1776756175
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|22.6|1776756176
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=22.600000 timestamp=1776756176
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|1.8|1776756179
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=1.800000 timestamp=1776756179
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|1.8|1776756181
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=1.800000 timestamp=1776756181
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|46.4|1776756182
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=46.400000 timestamp=1776756182
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|27.9|1776756183
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=27.900000 timestamp=1776756183
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|27.6|1776756184
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=27.600000 timestamp=1776756184
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|15.0|1776756188
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=15.000000 timestamp=1776756188
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|4.9|1776756189
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=4.900000 timestamp=1776756189
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|82.5|1776756190
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=82.500000 timestamp=1776756190
+[ALERT] CREATED - Sensor S003 -> Humedad alta detectada
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|22.0|1776756192
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=22.000000 timestamp=1776756192
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|10.1|1776756193
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=10.100000 timestamp=1776756193
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|3.1|1776756196
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=3.100000 timestamp=1776756196
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|18.6|1776756197
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=18.600000 timestamp=1776756197
+[ALERT] CREATED - Sensor S002 -> Inclinacion anomala detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|62.8|1776756199
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=62.800000 timestamp=1776756199
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|25.5|1776756200
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=25.500000 timestamp=1776756200
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|32.0|1776756201
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=32.000000 timestamp=1776756201
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|1.4|1776756204
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=1.400000 timestamp=1776756204
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S001
+[SENSOR] HEARTBEAT - Heartbeat recibido de S001
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|20.2|1776756206
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=20.200000 timestamp=1776756206
+[ALERT] CREATED - Sensor S002 -> Inclinacion anomala detectada
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|73.8|1776756207
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=73.800000 timestamp=1776756207
+[ALERT] CREATED - Sensor S003 -> Humedad alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|24.2|1776756208
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=24.200000 timestamp=1776756208
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|74.2|1776756209
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=74.200000 timestamp=1776756209
+[ALERT] CREATED - Sensor S005 -> Esfuerzo estructural alto detectado
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|14.1|1776756213
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=14.100000 timestamp=1776756213
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|7.2|1776756214
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=7.200000 timestamp=1776756214
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|49.6|1776756215
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=49.600000 timestamp=1776756215
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|31.5|1776756217
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=31.500000 timestamp=1776756217
+[ALERT] CREATED - Sensor S004 -> Temperatura alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|14.3|1776756218
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=14.300000 timestamp=1776756218
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|4.7|1776756221
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=4.700000 timestamp=1776756221
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|4.9|1776756222
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=4.900000 timestamp=1776756222
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|87.5|1776756224
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=87.500000 timestamp=1776756224
+[ALERT] CREATED - Sensor S003 -> Humedad alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|26.8|1776756225
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=26.800000 timestamp=1776756225
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|68.8|1776756226
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=68.800000 timestamp=1776756226
+[ALERT] CREATED - Sensor S005 -> Esfuerzo estructural alto detectado
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|4.5|1776756229
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=4.500000 timestamp=1776756229
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|4.0|1776756231
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=4.000000 timestamp=1776756231
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|79.0|1776756232
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=79.000000 timestamp=1776756232
+[ALERT] CREATED - Sensor S003 -> Humedad alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|23.1|1776756233
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=23.100000 timestamp=1776756233
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|42.0|1776756234
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=42.000000 timestamp=1776756234
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|1.6|1776756238
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=1.600000 timestamp=1776756238
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|2.9|1776756239
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=2.900000 timestamp=1776756239
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|49.4|1776756240
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=49.400000 timestamp=1776756240
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - GET_SENSORS
+[CLIENT] GET_SENSORS - Consulta de sensores recibida
+[SERVER] MESSAGE_RECEIVED - GET_ALERTS
+[CLIENT] GET_ALERTS - Consulta de alertas recibida
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|27.8|1776756241
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=27.800000 timestamp=1776756241
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|82.9|1776756243
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=82.900000 timestamp=1776756243
+[ALERT] CREATED - Sensor S005 -> Esfuerzo estructural alto detectado
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|1.9|1776756246
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=1.900000 timestamp=1776756246
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|5.8|1776756247
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=5.800000 timestamp=1776756247
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|81.8|1776756249
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=81.800000 timestamp=1776756249
+[ALERT] CREATED - Sensor S003 -> Humedad alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|23.1|1776756250
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=23.100000 timestamp=1776756250
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|39.7|1776756251
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=39.700000 timestamp=1776756251
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|14.9|1776756254
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=14.900000 timestamp=1776756254
+[ALERT] CREATED - Sensor S001 -> Vibracion alta detectada
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|20.4|1776756256
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=20.400000 timestamp=1776756256
+[ALERT] CREATED - Sensor S002 -> Inclinacion anomala detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
+[SERVER] MESSAGE_RECEIVED - MEASURE|S003|87.6|1776756257
+[SENSOR] MEASURE_SAVED - Sensor S003 valor=87.600000 timestamp=1776756257
+[ALERT] CREATED - Sensor S003 -> Humedad alta detectada
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S003
+[SENSOR] HEARTBEAT - Heartbeat recibido de S003
+[SERVER] MESSAGE_RECEIVED - MEASURE|S004|22.0|1776756258
+[SENSOR] MEASURE_SAVED - Sensor S004 valor=22.000000 timestamp=1776756258
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S004
+[SENSOR] HEARTBEAT - Heartbeat recibido de S004
+[SERVER] MESSAGE_RECEIVED - MEASURE|S005|64.7|1776756260
+[SENSOR] MEASURE_SAVED - Sensor S005 valor=64.700000 timestamp=1776756260
+[ALERT] CREATED - Sensor S005 -> Esfuerzo estructural alto detectado
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S005
+[SENSOR] HEARTBEAT - Heartbeat recibido de S005
+[SERVER] MESSAGE_RECEIVED - MEASURE|S001|4.4|1776756263
+[SENSOR] MEASURE_SAVED - Sensor S001 valor=4.400000 timestamp=1776756263
+[SERVER] MESSAGE_RECEIVED - MEASURE|S002|1.9|1776756264
+[SENSOR] MEASURE_SAVED - Sensor S002 valor=1.900000 timestamp=1776756264
+[SERVER] MESSAGE_RECEIVED - HEARTBEAT|S002
+[SENSOR] HEARTBEAT - Heartbeat recibido de S002
