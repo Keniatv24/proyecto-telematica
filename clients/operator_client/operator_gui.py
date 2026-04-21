@@ -4,6 +4,7 @@ import logging
 import io
 import contextlib
 from datetime import datetime
+import re
 
 logger = logging.getLogger(__name__)
 
@@ -298,6 +299,30 @@ class OperatorGUI:
             cursor="hand2"
         )
 
+    def _looks_like_sensor_row(self, parts):
+        if len(parts) < 4:
+            return False
+
+        sensor_id = parts[0].strip()
+        sensor_type = parts[1].strip().lower()
+        location = parts[2].strip()
+        status = parts[3].strip().lower()
+
+        valid_sensor_id = bool(re.match(r"^[A-Z]+[0-9-]+$", sensor_id))
+        valid_status = status in {"active", "inactive", "paused"}
+        invalid_location = location.lower() in {"high", "medium", "low"}
+
+        return valid_sensor_id and valid_status and not invalid_location and sensor_type not in {"high", "medium", "low"}
+
+    def _looks_like_alert_row(self, parts):
+        if len(parts) < 6:
+            return False
+
+        alert_id = parts[0].strip()
+        level = parts[3].strip().lower()
+
+        return alert_id.isdigit() and level in {"high", "medium", "low"}
+
     def log_activity(self, message):
         self.activity_text.config(state="normal")
         timestamp = datetime.now().strftime("%H:%M:%S")
@@ -322,7 +347,7 @@ class OperatorGUI:
             if self.client.user_id:
                 self.status_var.set("Conectado")
                 self.user_var.set(f"{username} | ID: {self.client.user_id}")
-                self.role_var.set(self.client.role)
+                self.role_var.set(getattr(self.client, "role", "admin"))
                 self.log_activity(f"[LOGIN] Acceso exitoso para {username}")
                 messagebox.showinfo("Login", response if response else "Login exitoso")
             else:
@@ -385,12 +410,21 @@ class OperatorGUI:
             count = 0
             lines = response.splitlines()
 
-            for line in lines[1:]:
-                if "|" in line:
-                    parts = [p.strip() for p in line.split("|")]
-                    if len(parts) >= 4:
-                        self.sensors_tree.insert("", "end", values=(parts[0], parts[1], parts[2], parts[3]))
-                        count += 1
+            for line in lines:
+                line = line.strip()
+                if not line or line.upper() in {"SENSORS", "SIN_RESULTADOS"}:
+                    continue
+
+                if "|" not in line:
+                    continue
+
+                parts = [p.strip() for p in line.split("|")]
+
+                if not self._looks_like_sensor_row(parts):
+                    continue
+
+                self.sensors_tree.insert("", "end", values=(parts[0], parts[1], parts[2], parts[3]))
+                count += 1
 
             self.sensor_count_var.set(str(count))
             self.last_update_var.set(datetime.now().strftime("%H:%M:%S"))
@@ -409,23 +443,32 @@ class OperatorGUI:
             count = 0
             lines = response.splitlines()
 
-            for line in lines[1:]:
-                if "|" in line:
-                    parts = [p.strip() for p in line.split("|")]
-                    if len(parts) >= 6:
-                        tag = "low"
-                        if parts[3].lower() == "high":
-                            tag = "high"
-                        elif parts[3].lower() == "medium":
-                            tag = "medium"
+            for line in lines:
+                line = line.strip()
+                if not line or line.upper() in {"ALERTS", "SIN_RESULTADOS"}:
+                    continue
 
-                        self.alerts_tree.insert(
-                            "",
-                            "end",
-                            values=(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]),
-                            tags=(tag,)
-                        )
-                        count += 1
+                if "|" not in line:
+                    continue
+
+                parts = [p.strip() for p in line.split("|")]
+
+                if not self._looks_like_alert_row(parts):
+                    continue
+
+                tag = "low"
+                if parts[3].lower() == "high":
+                    tag = "high"
+                elif parts[3].lower() == "medium":
+                    tag = "medium"
+
+                self.alerts_tree.insert(
+                    "",
+                    "end",
+                    values=(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]),
+                    tags=(tag,)
+                )
+                count += 1
 
             self.alerts_tree.tag_configure("high", background="#7f1d1d", foreground="white")
             self.alerts_tree.tag_configure("medium", background="#78350f", foreground="white")

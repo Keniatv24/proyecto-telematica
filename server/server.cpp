@@ -485,10 +485,16 @@ string get_sensors_response() {
     bool has_rows = false;
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         has_rows = true;
-        string id = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
-        string type = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-        string location = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
-        string status = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
+
+        const unsigned char* c0 = sqlite3_column_text(stmt, 0);
+        const unsigned char* c1 = sqlite3_column_text(stmt, 1);
+        const unsigned char* c2 = sqlite3_column_text(stmt, 2);
+        const unsigned char* c3 = sqlite3_column_text(stmt, 3);
+
+        string id = c0 ? reinterpret_cast<const char*>(c0) : "";
+        string type = c1 ? reinterpret_cast<const char*>(c1) : "";
+        string location = c2 ? reinterpret_cast<const char*>(c2) : "";
+        string status = c3 ? reinterpret_cast<const char*>(c3) : "";
 
         response += id + " | " + type + " | " + location + " | " + status + "\n";
     }
@@ -529,11 +535,17 @@ string get_alerts_response() {
         has_rows = true;
 
         int alert_id = sqlite3_column_int(stmt, 0);
-        string sensor_id = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-        string sensor_type = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
-        string level = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
-        string message = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
-        string timestamp = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5));
+        const unsigned char* c1 = sqlite3_column_text(stmt, 1);
+        const unsigned char* c2 = sqlite3_column_text(stmt, 2);
+        const unsigned char* c3 = sqlite3_column_text(stmt, 3);
+        const unsigned char* c4 = sqlite3_column_text(stmt, 4);
+        const unsigned char* c5 = sqlite3_column_text(stmt, 5);
+
+        string sensor_id = c1 ? reinterpret_cast<const char*>(c1) : "";
+        string sensor_type = c2 ? reinterpret_cast<const char*>(c2) : "";
+        string level = c3 ? reinterpret_cast<const char*>(c3) : "";
+        string message = c4 ? reinterpret_cast<const char*>(c4) : "";
+        string timestamp = c5 ? reinterpret_cast<const char*>(c5) : "";
 
         response += to_string(alert_id) + " | " + sensor_id + " | " + sensor_type + " | " +
                     level + " | " + message + " | " + timestamp + "\n";
@@ -579,10 +591,14 @@ string get_readings_response(const string& sensor_id) {
         has_rows = true;
 
         int reading_id = sqlite3_column_int(stmt, 0);
-        string sid = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-        string sensor_type = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
+        const unsigned char* c1 = sqlite3_column_text(stmt, 1);
+        const unsigned char* c2 = sqlite3_column_text(stmt, 2);
         double value = sqlite3_column_double(stmt, 3);
-        string timestamp = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
+        const unsigned char* c4 = sqlite3_column_text(stmt, 4);
+
+        string sid = c1 ? reinterpret_cast<const char*>(c1) : "";
+        string sensor_type = c2 ? reinterpret_cast<const char*>(c2) : "";
+        string timestamp = c4 ? reinterpret_cast<const char*>(c4) : "";
 
         response += to_string(reading_id) + " | " + sid + " | " + sensor_type + " | " +
                     to_string(value) + " | " + timestamp + "\n";
