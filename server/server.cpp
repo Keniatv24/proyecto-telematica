@@ -7,6 +7,7 @@
 #include <vector>
 #include <mutex>
 #include <algorithm>
+#include <ctime>
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <sqlite3.h>
@@ -15,7 +16,12 @@ using namespace std;
 
 string DB_PATH = "../database.db";
 mutex log_mutex;
+mutex simulation_mutex;
+bool simulation_paused = false;
 
+// =========================
+// UTILIDADES
+// =========================
 string trim(const string& s) {
     size_t start = s.find_first_not_of(" \t\r\n");
     if (start == string::npos) return "";
@@ -33,15 +39,61 @@ vector<string> split(const string& s, char delimiter) {
     return parts;
 }
 
-void write_log(const string& log_file, const string& source, const string& action, const string& details) {
+string current_timestamp() {
+    time_t now = time(nullptr);
+    tm* local = localtime(&now);
+    char buffer[32];
+    strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", local);
+    return string(buffer);
+}
+
+bool is_simulation_paused() {
+    lock_guard<mutex> lock(simulation_mutex);
+    return simulation_paused;
+}
+
+void set_simulation_paused(bool value) {
+    lock_guard<mutex> lock(simulation_mutex);
+    simulation_paused = value;
+}
+
+// =========================
+// LOGGING
+// =========================
+void write_log(
+    const string& log_file,
+    const string& client_ip,
+    int client_port,
+    const string& action,
+    const string& received,
+    const string& response
+) {
     lock_guard<mutex> lock(log_mutex);
+
+    string timestamp = current_timestamp();
+
+    cout << "[" << timestamp << "] "
+         << "[" << client_ip << ":" << client_port << "] "
+         << action
+         << " | RECIBIDO: " << received
+         << " | RESPUESTA: " << response
+         << endl;
+
     ofstream log(log_file, ios::app);
     if (log.is_open()) {
-        log << "[" << source << "] " << action << " - " << details << endl;
+        log << "[" << timestamp << "] "
+            << "[" << client_ip << ":" << client_port << "] "
+            << action
+            << " | RECIBIDO: " << received
+            << " | RESPUESTA: " << response
+            << endl;
         log.close();
     }
 }
 
+// =========================
+// BASE DE DATOS
+// =========================
 bool sensor_exists(const string& sensor_id) {
     sqlite3* db = nullptr;
     sqlite3_stmt* stmt = nullptr;
@@ -293,7 +345,70 @@ bool acknowledge_alert_db(int alert_id, string& error_message) {
     return true;
 }
 
-void evaluate_alerts(const string& sensor_id, double value, const string& log_file) {
+bool clear_alerts_db(string& error_message, int& deleted_count) {
+    sqlite3* db = nullptr;
+    sqlite3_stmt* stmt = nullptr;
+    deleted_count = 0;
+
+    int rc = sqlite3_open(DB_PATH.c_str(), &db);
+    if (rc != SQLITE_OK) {
+        error_message = "No se pudo abrir la base de datos";
+        if (db) sqlite3_close(db);
+        return false;
+    }
+
+    string sql = "DELETE FROM alerts;";
+    rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    if (rc != SQLITE_OK) {
+        error_message = "Error preparando limpieza de alertas";
+        sqlite3_close(db);
+        return false;
+    }
+
+    rc = sqlite3_step(stmt);
+    if (rc != SQLITE_DONE) {
+        error_message = "Error ejecutando limpieza de alertas";
+        sqlite3_finalize(stmt);
+        sqlite3_close(db);
+        return false;
+    }
+
+    deleted_count = sqlite3_changes(db);
+
+    sqlite3_finalize(stmt);
+    sqlite3_close(db);
+    return true;
+}
+
+int count_table_rows(const string& table_name) {
+    sqlite3* db = nullptr;
+    sqlite3_stmt* stmt = nullptr;
+    int count = 0;
+
+    int rc = sqlite3_open(DB_PATH.c_str(), &db);
+    if (rc != SQLITE_OK) {
+        if (db) sqlite3_close(db);
+        return 0;
+    }
+
+    string sql = "SELECT COUNT(*) FROM " + table_name + ";";
+    rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+
+    if (rc == SQLITE_OK) {
+        if (sqlite3_step(stmt) == SQLITE_ROW) {
+            count = sqlite3_column_int(stmt, 0);
+        }
+    }
+
+    if (stmt) sqlite3_finalize(stmt);
+    sqlite3_close(db);
+    return count;
+}
+
+// =========================
+// EVALUACIÓN DE ALERTAS
+// =========================
+void evaluate_alerts(const string& sensor_id, double value) {
     string sensor_type;
     if (!get_sensor_type(sensor_id, sensor_type)) {
         return;
@@ -341,14 +456,13 @@ void evaluate_alerts(const string& sensor_id, double value, const string& log_fi
     }
 
     if (!level.empty()) {
-        if (insert_alert(sensor_id, level, message, error_message)) {
-            write_log(log_file, "ALERT", "CREATED", "Sensor " + sensor_id + " -> " + message);
-        } else {
-            write_log(log_file, "ALERT", "ERROR", "No se pudo crear alerta para " + sensor_id + ": " + error_message);
-        }
+        insert_alert(sensor_id, level, message, error_message);
     }
 }
 
+// =========================
+// RESPUESTAS
+// =========================
 string get_sensors_response() {
     sqlite3* db = nullptr;
     sqlite3_stmt* stmt = nullptr;
@@ -361,15 +475,14 @@ string get_sensors_response() {
     }
 
     string sql = "SELECT id, type, location, status FROM sensors ORDER BY id;";
-
     rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+
     if (rc != SQLITE_OK) {
         sqlite3_close(db);
         return "ERROR consulta_sensores_fallida\n";
     }
 
     bool has_rows = false;
-
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         has_rows = true;
         string id = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
@@ -383,10 +496,7 @@ string get_sensors_response() {
     sqlite3_finalize(stmt);
     sqlite3_close(db);
 
-    if (!has_rows) {
-        return "SENSORS\nsin_resultados\n";
-    }
-
+    if (!has_rows) return "SENSORS\nsin_resultados\n";
     return response;
 }
 
@@ -415,9 +525,9 @@ string get_alerts_response() {
     }
 
     bool has_rows = false;
-
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         has_rows = true;
+
         int alert_id = sqlite3_column_int(stmt, 0);
         string sensor_id = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
         string sensor_type = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
@@ -425,16 +535,14 @@ string get_alerts_response() {
         string message = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
         string timestamp = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5));
 
-        response += to_string(alert_id) + " | " + sensor_id + " | " + sensor_type + " | " + level + " | " + message + " | " + timestamp + "\n";
+        response += to_string(alert_id) + " | " + sensor_id + " | " + sensor_type + " | " +
+                    level + " | " + message + " | " + timestamp + "\n";
     }
 
     sqlite3_finalize(stmt);
     sqlite3_close(db);
 
-    if (!has_rows) {
-        return "ALERTS\nsin_resultados\n";
-    }
-
+    if (!has_rows) return "ALERTS\nsin_resultados\n";
     return response;
 }
 
@@ -467,41 +575,51 @@ string get_readings_response(const string& sensor_id) {
     sqlite3_bind_text(stmt, 1, sensor_id.c_str(), -1, SQLITE_TRANSIENT);
 
     bool has_rows = false;
-
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         has_rows = true;
+
         int reading_id = sqlite3_column_int(stmt, 0);
         string sid = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
         string sensor_type = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
         double value = sqlite3_column_double(stmt, 3);
         string timestamp = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
 
-        response += to_string(reading_id) + " | " + sid + " | " + sensor_type + " | " + to_string(value) + " | " + timestamp + "\n";
+        response += to_string(reading_id) + " | " + sid + " | " + sensor_type + " | " +
+                    to_string(value) + " | " + timestamp + "\n";
     }
 
     sqlite3_finalize(stmt);
     sqlite3_close(db);
 
-    if (!has_rows) {
-        return "READINGS\nsin_resultados\n";
-    }
-
+    if (!has_rows) return "READINGS\nsin_resultados\n";
     return response;
 }
 
-string process_pipe_message(const string& message, const string& log_file) {
+string get_system_status_response() {
+    int sensors_count = count_table_rows("sensors");
+    int alerts_count = count_table_rows("alerts");
+    string simulation_state = is_simulation_paused() ? "PAUSED" : "RUNNING";
+    string overall = alerts_count > 0 ? "ALERT" : "NORMAL";
+
+    string response = "SYSTEM_STATUS\n";
+    response += "overall | " + overall + "\n";
+    response += "simulation | " + simulation_state + "\n";
+    response += "active_sensors | " + to_string(sensors_count) + "\n";
+    response += "active_alerts | " + to_string(alerts_count) + "\n";
+    return response;
+}
+
+// =========================
+// PROTOCOLO
+// =========================
+string process_pipe_message(const string& message) {
     vector<string> parts = split(message, '|');
-    if (parts.empty()) {
-        return "ERROR formato_invalido\n";
-    }
+    if (parts.empty()) return "ERROR formato_invalido\n";
 
     string command = trim(parts[0]);
 
     if (command == "REGISTER") {
-        if (parts.size() < 6) {
-            write_log(log_file, "SERVER", "ERROR", "Formato invalido en REGISTER");
-            return "ERROR register_formato_invalido\n";
-        }
+        if (parts.size() < 6) return "ERROR register_formato_invalido\n";
 
         string sensor_id = trim(parts[1]);
         string type = trim(parts[2]);
@@ -509,38 +627,37 @@ string process_pipe_message(const string& message, const string& log_file) {
         string unit = trim(parts[4]);
         string token = trim(parts[5]);
 
+        (void)unit;
+
         if (sensor_id.empty() || type.empty() || location.empty() || token.empty()) {
-            write_log(log_file, "SERVER", "ERROR", "Campos vacios en REGISTER");
             return "ERROR register_campos_invalidos\n";
         }
 
         string error_message;
         if (!register_sensor(sensor_id, type, location, token, error_message)) {
-            write_log(log_file, "SERVER", "ERROR", "No se pudo registrar sensor " + sensor_id + ": " + error_message);
             return "ERROR no_se_pudo_registrar_sensor\n";
         }
 
-        write_log(log_file, "SENSOR", "REGISTERED", "Sensor " + sensor_id + " tipo=" + type + " ubicacion=" + location + " unidad=" + unit);
         return "OK REGISTERED\n";
     }
 
     if (command == "MEASURE") {
-        if (parts.size() < 4) {
-            write_log(log_file, "SERVER", "ERROR", "Formato invalido en MEASURE");
-            return "ERROR measure_formato_invalido\n";
+        if (parts.size() < 4) return "ERROR measure_formato_invalido\n";
+
+        if (is_simulation_paused()) {
+            return "OK SIMULATION_PAUSED\n";
         }
 
         string sensor_id = trim(parts[1]);
         string value_str = trim(parts[2]);
         string timestamp = trim(parts[3]);
+        (void)timestamp;
 
         if (sensor_id.empty() || value_str.empty()) {
-            write_log(log_file, "SERVER", "ERROR", "Campos vacios en MEASURE");
             return "ERROR measure_campos_invalidos\n";
         }
 
         if (!sensor_exists(sensor_id)) {
-            write_log(log_file, "SERVER", "ERROR", "Sensor no registrado: " + sensor_id);
             return "ERROR sensor_no_registrado\n";
         }
 
@@ -548,94 +665,74 @@ string process_pipe_message(const string& message, const string& log_file) {
         try {
             value = stod(value_str);
         } catch (...) {
-            write_log(log_file, "SERVER", "ERROR", "Valor invalido en MEASURE para " + sensor_id);
             return "ERROR valor_invalido\n";
         }
 
         string error_message;
         if (!insert_reading(sensor_id, value, error_message)) {
-            write_log(log_file, "SERVER", "ERROR", "No se pudo guardar lectura MEASURE: " + error_message);
             return "ERROR no_se_pudo_guardar_lectura\n";
         }
 
-        write_log(log_file, "SENSOR", "MEASURE_SAVED", "Sensor " + sensor_id + " valor=" + to_string(value) + " timestamp=" + timestamp);
-        evaluate_alerts(sensor_id, value, log_file);
-
+        evaluate_alerts(sensor_id, value);
         return "OK MEASURE_RECEIVED\n";
     }
 
     if (command == "HEARTBEAT") {
-        if (parts.size() < 2) {
-            write_log(log_file, "SERVER", "ERROR", "Formato invalido en HEARTBEAT");
-            return "ERROR heartbeat_formato_invalido\n";
-        }
+        if (parts.size() < 2) return "ERROR heartbeat_formato_invalido\n";
 
         string sensor_id = trim(parts[1]);
-        if (sensor_id.empty()) {
-            return "ERROR sensor_id_requerido\n";
-        }
+        if (sensor_id.empty()) return "ERROR sensor_id_requerido\n";
 
-        write_log(log_file, "SENSOR", "HEARTBEAT", "Heartbeat recibido de " + sensor_id);
         return "OK HEARTBEAT\n";
     }
 
-    write_log(log_file, "SERVER", "ERROR", "Comando con pipes no reconocido: " + command);
     return "ERROR comando_no_reconocido\n";
 }
 
-string process_space_message(const string& message, const string& log_file) {
+string process_space_message(const string& message) {
     stringstream ss(message);
     string command;
     ss >> command;
 
     if (command == "SEND_READING") {
+        if (is_simulation_paused()) {
+            return "OK SIMULATION_PAUSED\n";
+        }
+
         string sensor_id, token;
         double value;
 
         ss >> sensor_id >> token >> value;
 
         if (sensor_id.empty() || token.empty() || ss.fail()) {
-            write_log(log_file, "SERVER", "ERROR", "Formato invalido en SEND_READING");
             return "ERROR formato_invalido\n";
         }
 
         if (!validate_sensor_token(sensor_id, token)) {
-            write_log(log_file, "SERVER", "ERROR", "Token invalido para sensor " + sensor_id);
             return "ERROR token_invalido\n";
         }
 
         string error_message;
         if (!insert_reading(sensor_id, value, error_message)) {
-            write_log(log_file, "SERVER", "ERROR", "No se pudo guardar lectura: " + error_message);
             return "ERROR no_se_pudo_guardar_lectura\n";
         }
 
-        write_log(log_file, "SENSOR", "READING_SAVED", "Sensor " + sensor_id + " valor=" + to_string(value));
-        evaluate_alerts(sensor_id, value, log_file);
-
+        evaluate_alerts(sensor_id, value);
         return "OK lectura_guardada\n";
     }
 
     if (command == "GET_SENSORS") {
-        write_log(log_file, "CLIENT", "GET_SENSORS", "Consulta de sensores recibida");
         return get_sensors_response();
     }
 
     if (command == "GET_ALERTS") {
-        write_log(log_file, "CLIENT", "GET_ALERTS", "Consulta de alertas recibida");
         return get_alerts_response();
     }
 
     if (command == "GET_READINGS") {
         string sensor_id;
         ss >> sensor_id;
-
-        if (sensor_id.empty()) {
-            write_log(log_file, "CLIENT", "GET_READINGS_ERROR", "No se envio sensor_id");
-            return "ERROR sensor_id_requerido\n";
-        }
-
-        write_log(log_file, "CLIENT", "GET_READINGS", "Consulta de lecturas para " + sensor_id);
+        if (sensor_id.empty()) return "ERROR sensor_id_requerido\n";
         return get_readings_response(sensor_id);
     }
 
@@ -643,47 +740,74 @@ string process_space_message(const string& message, const string& log_file) {
         int alert_id;
         ss >> alert_id;
 
-        if (ss.fail()) {
-            write_log(log_file, "CLIENT", "ACK_ALERT_ERROR", "No se envio alert_id valido");
-            return "ERROR alert_id_requerido\n";
-        }
+        if (ss.fail()) return "ERROR alert_id_requerido\n";
 
         string error_message;
         if (!acknowledge_alert_db(alert_id, error_message)) {
-            write_log(log_file, "CLIENT", "ACK_ALERT_ERROR", error_message);
             return "ERROR " + error_message + "\n";
         }
 
-        write_log(log_file, "CLIENT", "ACK_ALERT", "Alerta confirmada: " + to_string(alert_id));
         return "OK alert_acknowledged\n";
     }
 
-    write_log(log_file, "SERVER", "ERROR", "Comando no reconocido: " + command);
+    if (command == "CLEAR_ALERTS") {
+        string error_message;
+        int deleted_count = 0;
+
+        if (!clear_alerts_db(error_message, deleted_count)) {
+            return "ERROR " + error_message + "\n";
+        }
+
+        return "OK cleared_alerts " + to_string(deleted_count) + "\n";
+    }
+
+    if (command == "SYSTEM_STATUS") {
+        return get_system_status_response();
+    }
+
+    if (command == "PAUSE_SIMULATION") {
+        set_simulation_paused(true);
+        return "OK simulation_paused\n";
+    }
+
+    if (command == "RESUME_SIMULATION") {
+        set_simulation_paused(false);
+        return "OK simulation_resumed\n";
+    }
+
     return "ERROR comando_no_reconocido\n";
 }
 
-string process_message(const string& raw_message, const string& log_file) {
+string process_message(const string& raw_message) {
     string message = trim(raw_message);
-
-    if (message.empty()) {
-        return "ERROR mensaje_vacio\n";
-    }
+    if (message.empty()) return "ERROR mensaje_vacio\n";
 
     if (message.find('|') != string::npos) {
-        return process_pipe_message(message, log_file);
+        return process_pipe_message(message);
     }
 
-    return process_space_message(message, log_file);
+    return process_space_message(message);
 }
 
-void handle_client(int client_socket, string log_file) {
+// =========================
+// CLIENTE
+// =========================
+void handle_client(int client_socket, string client_ip, int client_port, const string& log_file) {
     char buffer[4096];
 
     while (true) {
         memset(buffer, 0, sizeof(buffer));
-        int bytes = read(client_socket, buffer, sizeof(buffer) - 1);
+        int bytes = recv(client_socket, buffer, sizeof(buffer) - 1, 0);
 
         if (bytes <= 0) {
+            write_log(
+                log_file,
+                client_ip,
+                client_port,
+                "DISCONNECT",
+                "cliente_desconectado",
+                "conexion_cerrada"
+            );
             break;
         }
 
@@ -694,16 +818,26 @@ void handle_client(int client_socket, string log_file) {
             continue;
         }
 
-        cout << "Mensaje recibido: " << message << endl;
-        write_log(log_file, "SERVER", "MESSAGE_RECEIVED", message);
+        string response = process_message(message);
 
-        string response = process_message(message, log_file);
         send(client_socket, response.c_str(), response.size(), 0);
+
+        write_log(
+            log_file,
+            client_ip,
+            client_port,
+            "REQUEST",
+            message,
+            trim(response)
+        );
     }
 
     close(client_socket);
 }
 
+// =========================
+// MAIN
+// =========================
 int main(int argc, char* argv[]) {
     if (argc < 3) {
         cerr << "Uso: ./server <puerto> <archivo_logs>" << endl;
@@ -733,7 +867,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    if (listen(server_fd, 10) < 0) {
+    if (listen(server_fd, 20) < 0) {
         cerr << "Error en listen" << endl;
         close(server_fd);
         return 1;
@@ -752,7 +886,19 @@ int main(int argc, char* argv[]) {
             continue;
         }
 
-        thread client_thread(handle_client, client_socket, log_file);
+        string client_ip = inet_ntoa(client_addr.sin_addr);
+        int client_port = ntohs(client_addr.sin_port);
+
+        write_log(
+            log_file,
+            client_ip,
+            client_port,
+            "CONNECT",
+            "nueva_conexion",
+            "cliente_conectado"
+        );
+
+        thread client_thread(handle_client, client_socket, client_ip, client_port, log_file);
         client_thread.detach();
     }
 

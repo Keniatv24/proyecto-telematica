@@ -3,6 +3,7 @@ import socket
 import argparse
 import sys
 
+
 class OperatorClient:
     def __init__(self, host, port, login_host, login_port):
         self.host = host
@@ -14,6 +15,7 @@ class OperatorClient:
         self.user_id = None
         self.token = None
         self.refresh_token = None
+        self.role = "admin"
 
     def connect(self):
         try:
@@ -48,6 +50,7 @@ class OperatorClient:
             self.user_id = parts[2]
             self.token = parts[3]
             self.refresh_token = parts[4]
+            self.role = "admin"
             print(f"[INFO] Login exitoso. user_id={self.user_id}")
 
         login_sock.close()
@@ -90,6 +93,7 @@ class OperatorClient:
         self.user_id = None
         self.token = None
         self.refresh_token = None
+        self.role = "Sin rol"
 
         login_sock.close()
 
@@ -112,6 +116,18 @@ class OperatorClient:
 
     def ack_alert(self, alert_id):
         self.send_command(f"ACK_ALERT {alert_id}")
+
+    def clear_alerts(self):
+        self.send_command("CLEAR_ALERTS")
+
+    def get_system_status(self):
+        self.send_command("SYSTEM_STATUS")
+
+    def pause_simulation(self):
+        self.send_command("PAUSE_SIMULATION")
+
+    def resume_simulation(self):
+        self.send_command("RESUME_SIMULATION")
 
     def run_console(self):
         print("Modo consola - escriba 'help' para comandos")
@@ -142,6 +158,10 @@ Comandos disponibles:
   alerts
   readings <sensor_id>
   ack <alert_id>
+  clear_alerts
+  status
+  pause
+  resume
   exit
 """)
 
@@ -175,12 +195,25 @@ Comandos disponibles:
                     continue
                 self.ack_alert(parts[1])
 
+            elif cmd == "clear_alerts":
+                self.clear_alerts()
+
+            elif cmd == "status":
+                self.get_system_status()
+
+            elif cmd == "pause":
+                self.pause_simulation()
+
+            elif cmd == "resume":
+                self.resume_simulation()
+
             elif cmd == "exit":
                 print("Saliendo...")
                 break
 
             else:
                 print("Comando no reconocido. Escribe 'help'.")
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -196,6 +229,7 @@ def main():
 
     if args.mode == "console":
         client.run_console()
+
 
 if __name__ == "__main__":
     main()

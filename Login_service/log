@@ -27,3 +27,12 @@
 [Tue Apr 21 02:23:46 2026] | ID: 0 | MSG: information does not match
 [Tue Apr 21 02:23:50 2026] | ID: 0000000001 | MSG: token validated and information was updated
 [Tue Apr 21 02:23:50 2026] | ID: 0000000001 | MSG: the refresh token was updated
+[Tue Apr 21 02:40:19 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided (active)
+[Tue Apr 21 02:40:19 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided
+[Tue Apr 21 02:46:48 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided (active)
+[Tue Apr 21 02:46:48 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided
+[Tue Apr 21 02:47:47 2026] | ID: 0000000001 | MSG: token validated and information was updated
+[Tue Apr 21 03:19:03 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided (active)
+[Tue Apr 21 03:19:03 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided
+[Tue Apr 21 03:36:46 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided (active)
+[Tue Apr 21 03:36:46 2026] | ID: 0000000001 | MSG: user located; ID, token and refresh token has been provided

@@ -14,17 +14,19 @@ class OperatorGUI:
         self.client = client
 
         self.root.title("IoT Monitoring Center - Operator Dashboard")
-        self.root.geometry("1450x860")
-        self.root.minsize(1280, 760)
+        self.root.geometry("1500x900")
+        self.root.minsize(1320, 780)
         self.root.configure(bg="#0b1220")
 
         self.status_var = tk.StringVar(value="Desconectado")
         self.user_var = tk.StringVar(value="Sin sesión")
+        self.role_var = tk.StringVar(value="Sin rol")
         self.last_update_var = tk.StringVar(value="Nunca")
         self.alert_count_var = tk.StringVar(value="0")
         self.sensor_count_var = tk.StringVar(value="0")
         self.clock_var = tk.StringVar(value="--:--:--")
         self.auto_refresh_var = tk.StringVar(value="OFF")
+        self.system_state_var = tk.StringVar(value="Sin datos")
 
         self.username_entry = None
         self.password_entry = None
@@ -40,9 +42,6 @@ class OperatorGUI:
         self.update_clock()
         self.refresh_all(initial=True)
 
-    
-    # ESTILOS
-    
     def _configure_styles(self):
         style = ttk.Style()
         try:
@@ -69,9 +68,6 @@ class OperatorGUI:
             relief="flat"
         )
 
-    
-    # UI PRINCIPAL
-    
     def create_ui(self):
         self._build_header()
         self._build_top_cards()
@@ -125,14 +121,16 @@ class OperatorGUI:
 
         self._create_stat_card(wrapper, "Estado", self.status_var, 0, "#38bdf8")
         self._create_stat_card(wrapper, "Usuario", self.user_var, 1, "#60a5fa")
-        self._create_stat_card(wrapper, "Última actualización", self.last_update_var, 2, "#818cf8")
-        self._create_stat_card(wrapper, "Sensores", self.sensor_count_var, 3, "#22c55e")
-        self._create_stat_card(wrapper, "Alertas", self.alert_count_var, 4, "#ef4444")
-        self._create_stat_card(wrapper, "Auto refresh", self.auto_refresh_var, 5, "#f59e0b")
+        self._create_stat_card(wrapper, "Rol", self.role_var, 2, "#a78bfa")
+        self._create_stat_card(wrapper, "Última actualización", self.last_update_var, 3, "#818cf8")
+        self._create_stat_card(wrapper, "Sensores", self.sensor_count_var, 4, "#22c55e")
+        self._create_stat_card(wrapper, "Alertas", self.alert_count_var, 5, "#ef4444")
+        self._create_stat_card(wrapper, "Estado sistema", self.system_state_var, 6, "#f59e0b")
+        self._create_stat_card(wrapper, "Auto refresh", self.auto_refresh_var, 7, "#f97316")
 
     def _create_stat_card(self, parent, title, variable, col, accent):
         card = tk.Frame(parent, bg="#172033", bd=0, relief="flat", highlightthickness=1, highlightbackground="#243146")
-        card.grid(row=0, column=col, padx=7, sticky="nsew")
+        card.grid(row=0, column=col, padx=6, sticky="nsew")
         parent.grid_columnconfigure(col, weight=1)
 
         top_bar = tk.Frame(card, bg=accent, height=4)
@@ -152,7 +150,7 @@ class OperatorGUI:
             font=("Segoe UI", 14, "bold"),
             fg="white",
             bg="#172033",
-            wraplength=200,
+            wraplength=220,
             justify="left"
         ).pack(anchor="w", padx=14, pady=(0, 12))
 
@@ -169,12 +167,8 @@ class OperatorGUI:
         self._build_login_panel(left)
         self._build_sensors_panel(left)
         self._build_activity_panel(left)
-
         self._build_alerts_panel(right)
 
-    
-    # PANELES
-    
     def _build_panel_frame(self, parent, title):
         panel = tk.Frame(parent, bg="#111827", highlightthickness=1, highlightbackground="#243146")
         panel.pack(fill="both", expand=False, pady=(0, 12))
@@ -200,26 +194,16 @@ class OperatorGUI:
 
         tk.Label(body, text="Usuario", bg="#111827", fg="white", font=("Segoe UI", 11)).grid(row=0, column=0, padx=8, pady=8, sticky="w")
         self.username_entry = tk.Entry(
-            body,
-            width=28,
-            font=("Segoe UI", 11),
-            bg="#0f172a",
-            fg="white",
-            insertbackground="white",
-            relief="flat"
+            body, width=28, font=("Segoe UI", 11),
+            bg="#0f172a", fg="white", insertbackground="white", relief="flat"
         )
         self.username_entry.grid(row=0, column=1, padx=8, pady=8, sticky="ew")
 
         tk.Label(body, text="Contraseña", bg="#111827", fg="white", font=("Segoe UI", 11)).grid(row=1, column=0, padx=8, pady=8, sticky="w")
         self.password_entry = tk.Entry(
-            body,
-            width=28,
-            show="*",
+            body, width=28, show="*",
             font=("Segoe UI", 11),
-            bg="#0f172a",
-            fg="white",
-            insertbackground="white",
-            relief="flat"
+            bg="#0f172a", fg="white", insertbackground="white", relief="flat"
         )
         self.password_entry.grid(row=1, column=1, padx=8, pady=8, sticky="ew")
 
@@ -231,8 +215,11 @@ class OperatorGUI:
         self._make_button(btns, "Login", self.on_login, "#2563eb").pack(fill="x", pady=4)
         self._make_button(btns, "Logout", self.on_logout, "#dc2626").pack(fill="x", pady=4)
         self._make_button(btns, "Validar sesión", self.on_validate, "#059669").pack(fill="x", pady=4)
+        self._make_button(btns, "Estado del sistema", self.on_system_status, "#0ea5e9").pack(fill="x", pady=4)
         self._make_button(btns, "Actualizar todo", self.refresh_all, "#7c3aed").pack(fill="x", pady=4)
         self._make_button(btns, "Auto refresh", self.toggle_auto_refresh, "#f59e0b").pack(fill="x", pady=4)
+        self._make_button(btns, "Pausar simulación", self.on_pause_simulation, "#92400e").pack(fill="x", pady=4)
+        self._make_button(btns, "Reanudar simulación", self.on_resume_simulation, "#065f46").pack(fill="x", pady=4)
 
     def _build_sensors_panel(self, parent):
         _, body = self._build_panel_frame(parent, "Sensores activos")
@@ -275,6 +262,7 @@ class OperatorGUI:
 
         self._make_button(controls, "Actualizar alertas", self.update_alerts, "#2563eb").pack(side="left", padx=(0, 8))
         self._make_button(controls, "ACK alerta seleccionada", self.on_ack_alert, "#dc2626").pack(side="left", padx=(0, 8))
+        self._make_button(controls, "Limpiar alertas operativas", self.on_clear_alerts, "#b91c1c").pack(side="left", padx=(0, 8))
         self._make_button(controls, "Actualizar todo", self.refresh_all, "#059669").pack(side="left")
 
     def _build_activity_panel(self, parent):
@@ -310,9 +298,6 @@ class OperatorGUI:
             cursor="hand2"
         )
 
-    
-    # LÓGICA
-    
     def log_activity(self, message):
         self.activity_text.config(state="normal")
         timestamp = datetime.now().strftime("%H:%M:%S")
@@ -334,15 +319,16 @@ class OperatorGUI:
 
         try:
             response = self._capture_response(lambda: self.client.login(username, password))
-
             if self.client.user_id:
                 self.status_var.set("Conectado")
                 self.user_var.set(f"{username} | ID: {self.client.user_id}")
+                self.role_var.set(self.client.role)
                 self.log_activity(f"[LOGIN] Acceso exitoso para {username}")
                 messagebox.showinfo("Login", response if response else "Login exitoso")
             else:
                 self.status_var.set("Desconectado")
                 self.user_var.set("Sin sesión")
+                self.role_var.set("Sin rol")
                 self.log_activity("[LOGIN] Intento fallido")
                 messagebox.showerror("Login", response if response else "No se pudo iniciar sesión")
         except Exception as e:
@@ -354,6 +340,7 @@ class OperatorGUI:
             response = self._capture_response(self.client.logout)
             self.status_var.set("Desconectado")
             self.user_var.set("Sin sesión")
+            self.role_var.set("Sin rol")
             self.log_activity("[LOGOUT] Sesión cerrada")
             messagebox.showinfo("Logout", response if response else "Sesión cerrada")
         except Exception as e:
@@ -368,6 +355,25 @@ class OperatorGUI:
         except Exception as e:
             logger.error(f"Error validando sesión: {e}")
             messagebox.showwarning("Validación", str(e))
+
+    def on_system_status(self):
+        try:
+            response = self._capture_response(self.client.get_system_status)
+            self.log_activity("[STATUS] Consulta de estado del sistema")
+
+            normalized = response.upper()
+            if "OVERALL | ALERT" in normalized or "ALERT" in normalized:
+                self.system_state_var.set("En alerta")
+            elif "OVERALL | NORMAL" in normalized or "NORMAL" in normalized:
+                self.system_state_var.set("Normal")
+            else:
+                self.system_state_var.set("Operativo")
+
+            messagebox.showinfo("Estado del sistema", response if response else "Sin datos")
+        except Exception as e:
+            logger.error(f"Error consultando estado: {e}")
+            self.log_activity(f"[ERROR] STATUS: {e}")
+            messagebox.showerror("Estado del sistema", str(e))
 
     def update_sensors(self):
         try:
@@ -427,6 +433,7 @@ class OperatorGUI:
 
             self.alert_count_var.set(str(count))
             self.last_update_var.set(datetime.now().strftime("%H:%M:%S"))
+            self.system_state_var.set("En alerta" if count > 0 else "Normal")
             self.log_activity(f"[ALERTS] Alertas cargadas: {count}")
         except Exception as e:
             logger.error(f"Error actualizando alertas: {e}")
@@ -443,7 +450,7 @@ class OperatorGUI:
 
         try:
             response = self._capture_response(lambda: self.client.ack_alert(alert_id))
-            self.log_activity(f"[ACK] Intento de confirmación de alerta {alert_id}")
+            self.log_activity(f"[ACK] Confirmación de alerta {alert_id}")
 
             if "OK" in response:
                 messagebox.showinfo("ACK", response)
@@ -455,6 +462,52 @@ class OperatorGUI:
             logger.error(f"Error haciendo ACK: {e}")
             self.log_activity(f"[ERROR] ACK: {e}")
             messagebox.showerror("ACK", str(e))
+
+    def on_clear_alerts(self):
+        confirm = messagebox.askyesno(
+            "Limpiar alertas",
+            "¿Seguro que quieres limpiar todas las alertas operativas?"
+        )
+
+        if not confirm:
+            return
+
+        try:
+            response = self._capture_response(self.client.clear_alerts)
+            self.log_activity("[SUPERVISION] Se limpiaron todas las alertas operativas")
+
+            self.update_alerts()
+            self.alert_count_var.set("0")
+            self.system_state_var.set("Normal")
+
+            messagebox.showinfo(
+                "Limpiar alertas",
+                response if response else "Todas las alertas fueron eliminadas"
+            )
+        except Exception as e:
+            logger.error(f"Error limpiando alertas: {e}")
+            self.log_activity(f"[ERROR] CLEAR_ALERTS: {e}")
+            messagebox.showerror("Limpiar alertas", str(e))
+
+    def on_pause_simulation(self):
+        try:
+            response = self._capture_response(self.client.pause_simulation)
+            self.log_activity("[SUPERVISION] Simulación pausada")
+            messagebox.showinfo("Pausar simulación", response if response else "Simulación pausada")
+        except Exception as e:
+            logger.error(f"Error pausando simulación: {e}")
+            self.log_activity(f"[ERROR] PAUSE_SIMULATION: {e}")
+            messagebox.showerror("Pausar simulación", str(e))
+
+    def on_resume_simulation(self):
+        try:
+            response = self._capture_response(self.client.resume_simulation)
+            self.log_activity("[SUPERVISION] Simulación reanudada")
+            messagebox.showinfo("Reanudar simulación", response if response else "Simulación reanudada")
+        except Exception as e:
+            logger.error(f"Error reanudando simulación: {e}")
+            self.log_activity(f"[ERROR] RESUME_SIMULATION: {e}")
+            messagebox.showerror("Reanudar simulación", str(e))
 
     def show_selected_sensor_readings(self):
         selected = self.sensors_tree.selection()
