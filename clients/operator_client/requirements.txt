@@ -1,0 +1,4 @@
+# Dependencias del Cliente Operador
+# Instalar con: pip install -r requirements.txt
+
+tkinter>=3.11   # GUI (normalmente viene con Python)

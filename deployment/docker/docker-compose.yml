@@ -1,0 +1,28 @@
+# Docker Compose para desarrollo local
+# 
+# PROPÓSITO:
+# Ejecutar el stack completo localmente para testing
+# - Servidor IoT
+# - Sensores simulados (en contenedores separados - opcional)
+# - Base de datos
+# 
+# USO:
+#   docker-compose up
+#   docker-compose down
+# 
+# TODO: COMPLETAR
+# version: '3.9'
+# 
+# services:
+#   iot-server:
+#     build: ../docker/
+#     ports:
+#       - "5000:5000"
+#       - "8080:8080"
+#     volumes:
+#       - ./logs:/app/logs
+#       - ./data:/app/data
+#     environment:
+#       - PORT=5000
+#       - LOG_FILE=/app/logs/server.log
+#     restart: unless-stopped
