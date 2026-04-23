@@ -24,39 +24,34 @@
 
 set -e
 
-echo "=== Iniciando despliegue ==="
+echo "=== set up inicial ==="
+echo "dando permisos de ejecucion"
 
-# 1. Actualizar sistema
-echo "Actualizando sistema..."
-# sudo apt update
-# sudo apt upgrade -y
+chmod -x 400 start_server.sh
+chmod -x 400 start_login.sh
+# Actualizar e instalar dependencias sistema
+echo "Actualizando e instalando dependencias..."
+sudo apt update -y
+sudo apt install -y build-essential
+sudo apt install -y libsqlite3-dev
 
-# 2. Instalar dependencias
-echo "Instalando dependencias..."
-# sudo apt install -y build-essential cmake sqlite3 python3
+# Instalar tmux  
+echo "Installing netcat and tmux..."
+sudo apt install -y tmux
 
-# 3. Clonar repositorio
-echo "Clonando repositorio..."
-# git clone https://github.com/Keniatv24/proyecto-telematica.git
-# cd proyecto-telematica
 
-# 4. Compilar servidor
-echo "Compilando servidor..."
-# cd server
-# mkdir -p build
-# cd build
-# cmake ..
-# make
-# cd ../..
+# Compilar server y login service
+echo "compilando login y server"
+cd ../../server/
+make
+cd ../Login_service
+make
 
-# 5. Crear BD
-echo "Inicializando base de datos..."
-# mkdir -p data logs
-# sqlite3 data/monitoring.db < docs/database/schema.sql
-# sqlite3 data/monitoring.db < docs/database/seed.sql
+# dar permisos de ejecucion a los ejecutables
+chmod -x 400 login_service
+cd ../server
+chmod -x 400 server
 
-# 6. Iniciar servidor
-echo "Iniciando servidor..."
-# nohup ./server/build/server 5000 ./logs/server.log > ./logs/console.log 2>&1 &
+echo "set up inicial completado!"
 
-echo "Despliegue completado!"
+echo "abriendo tmux (my_servers)..."
