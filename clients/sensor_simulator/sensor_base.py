@@ -47,6 +47,7 @@ CONSIDERACIONES:
 """
 
 import socket
+import ssl
 import time
 import logging
 import sys
@@ -75,7 +76,7 @@ class SensorBase(ABC):
     }
     
     def __init__(self, sensor_id, sensor_type, location, unit, token=None,
-                 server_host='localhost', server_port=5000):
+                 server_host='proyecto-telematica.local', server_port=5000):
         self.sensor_id = sensor_id
         self.sensor_type = sensor_type
         self.location = location
@@ -98,7 +99,7 @@ class SensorBase(ABC):
     
     @classmethod
     def crear_sensor(cls, sensor_type, sensor_id, location='Unknown', unit=None, token=None,
-                     server_host='localhost', server_port=5000):
+                     server_host='proyecto-telematica.local', server_port=5000):
         sensor_type_lower = sensor_type.lower().strip()
         
         # Unidades por defecto según tipo
@@ -177,18 +178,25 @@ class SensorBase(ABC):
     
     def connect(self):
         """
-        Conecta al servidor con timeout
+        Conecta al servidor con SSL/TLS y timeout
         
         Returns:
             bool: True si conexión exitosa, False en caso contrario
         """
         try:
-            self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            self.socket.settimeout(5)  # 5 segundos timeout
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.settimeout(5)  # 5 segundos timeout
+            
+            # Envolver socket con SSL/TLS (sin validar certificado en desarrollo)
+            context = ssl.create_default_context()
+            context.check_hostname = False
+            context.verify_mode = ssl.CERT_NONE
+            self.socket = context.wrap_socket(sock, server_hostname=self.server_host)
+            
             self.socket.connect((self.server_host, self.server_port))
             self.connected = True
             self.reconnect_attempts = 0
-            self.logger.info(f"✓ Conectado a {self.server_host}:{self.server_port}")
+            self.logger.info(f"✓ Conectado a {self.server_host}:{self.server_port} (SSL/TLS)")
             return True
         except socket.timeout:
             self.logger.error(f"Timeout conectando a {self.server_host}:{self.server_port}")

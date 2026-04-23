@@ -28,7 +28,7 @@ import argparse
 import signal
 
 
-def run_all_sensors(host='localhost', port=5000):
+def run_all_sensors(host='proyecto-telematica.local', port=5000):
     """Ejecuta todos los 5 sensores en procesos paralelos"""
     
     sensors = [

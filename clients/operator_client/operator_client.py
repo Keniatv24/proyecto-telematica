@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 import socket
+import ssl
 import argparse
 import sys
 
 
 class OperatorClient:
-    def __init__(self, host, port, login_host, login_port):
+    def __init__(self, host='proyecto-telematica.local', port=5000, login_host='proyecto-telematica.local', login_port=6000):
         self.host = host
         self.port = port
         self.login_host = login_host
@@ -19,15 +20,24 @@ class OperatorClient:
 
     def connect(self):
         try:
-            self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            self.sock.connect((self.host, self.port))
-            return f"[INFO] Conectado al servidor principal {self.host}:{self.port}"
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            context = ssl.create_default_context()
+            context.check_hostname = False
+            context.verify_mode = ssl.CERT_NONE
+            sock = context.wrap_socket(sock, server_hostname=self.host)
+            sock.connect((self.host, self.port))
+            self.sock = sock
+            return f"[INFO] Conectado al servidor principal {self.host}:{self.port} (SSL/TLS)"
         except Exception as e:
             raise RuntimeError(f"No se pudo conectar al server: {e}")
 
     def connect_login(self):
         try:
             login_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            context = ssl.create_default_context()
+            context.check_hostname = False
+            context.verify_mode = ssl.CERT_NONE
+            login_sock = context.wrap_socket(login_sock, server_hostname=self.login_host)
             login_sock.connect((self.login_host, self.login_port))
             return login_sock
         except Exception as e:

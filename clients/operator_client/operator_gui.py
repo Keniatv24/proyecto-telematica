@@ -1044,7 +1044,7 @@ class OperatorGUI:
 def main(client=None):
     if client is None:
         from operator_client import OperatorClient
-        client = OperatorClient("localhost", 5000, "localhost", 6000)
+        client = OperatorClient("proyecto-telematica.local", 5000, "proyecto-telematica.local", 6000)
 
     root = tk.Tk()
     app = OperatorGUI(root, client)
