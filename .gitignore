@@ -89,3 +89,23 @@ aws-credentials.sh
 # Docker
 *.container
 .docker/
+
+################################################################################
+# DOCUMENTACIÓN LOCAL Y TRANSITORIA (NO NECESARIA EN REPO)
+################################################################################
+# Checklists y estado temporal
+MISSING.md
+STATUS.md
+QUICKSTART.md
+diagnose.sh
+
+# Archivos de desarrollo/notas personales
+*.local.md
+NOTES.md
+TODO.md
+DEVELOPMENT.md
+
+# Archivos de configuración local
+.local/
+*.local.json
+config.local.json
