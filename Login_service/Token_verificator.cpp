@@ -14,13 +14,14 @@ std::string TokenVerificator::Generate_random() {
     for (int i = 0; i < 10; ++i) {
         random_string += characters[distribution(generator)];
     }
+
     return random_string;
 }
 
 ValidationResponse TokenVerificator::validate_token(std::string id, std::string token, std::string r_token) {
     ValidationResponse response;
 
-    // 1. Check if the user exists
+    // 1. Verificar que el usuario exista
     if (!db.Checkby_ID(id)) {
         response.token = "0";
         response.r_token = "0";
@@ -28,25 +29,22 @@ ValidationResponse TokenVerificator::validate_token(std::string id, std::string 
         return response;
     }
 
-    // 2. Validate existing token and refresh token
+    // 2. Validar token y refresh token actuales
     bool isTokenValid = db.Check_Token(id, token);
     bool isRefreshValid = db.Check_Refresh(id, r_token);
 
     if (isTokenValid && isRefreshValid) {
-        // Generate new values
-        std::string new_token = Generate_random();
-        std::string new_r_token = Generate_random();
+        /*
+            IMPORTANTE:
+            Antes este método generaba un token nuevo en cada validación.
+            Eso rompía el cliente porque el dashboard seguía usando el token anterior.
 
-        // Update database
-        db.Update_Token(id, new_token);
-        db.Update_refresh(id, new_r_token);
-
-        // Prepare success response
-        response.token = new_token;
-        response.r_token = new_r_token;
-        response.message = "token validated and information was updated";
+            Para este proyecto, mantenemos el mismo token durante la sesión.
+        */
+        response.token = token;
+        response.r_token = r_token;
+        response.message = "token validated";
     } else {
-        // 3. Validation failed
         response.token = "0";
         response.r_token = "0";
         response.message = "token could not be validated";
