@@ -23,7 +23,7 @@ set -e
 
 SERVER_PORT=5000
 LOG_FILE="./logs/server.log"
-SERVER_BIN="./server/build/server"
+SERVER_BIN="../../server/server"
 
 echo "=== Iniciando servidor IoT ==="
 

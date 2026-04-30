@@ -203,7 +203,53 @@ proyecto-telematica/
 
 ---
 
-## 📋 Checklist: Verificar lo Creado
+## � Seguridad: SSL/TLS + DNS (✅ IMPLEMENTADO)
+
+### SSL/TLS Encryption
+✅ **OpenSSL Integration** - TLS 1.2+ en servidor y clientes
+✅ **Self-Signed Certificates** - server.crt (365 días) + server.key
+✅ **Encrypted Communication** - SSL_read/SSL_write en C++, ssl.wrap_socket en Python
+✅ **Certificate Handling** - Desarrollo con CERT_NONE, ready para validación en producción
+
+**Estado del Código:**
+- `server/server.cpp` → ✅ SSL/TLS completamente implementado
+- `clients/sensor_simulator/sensor_base.py` → ✅ Conexiones encriptadas
+- `clients/operator_client/operator_client.py` → ✅ Conexiones encriptadas
+- `server/Makefile` → ✅ Vinculación con libssl, libcrypto
+- `server/server.crt & server.key` → ✅ Certificados generados y presentes
+
+**Características:**
+```
+Cliente → [SSL Handshake] → Servidor
+       ↓ SSL_connect/SSL_accept
+       → [Encrypted Data] → 
+       ↓ SSL_read/SSL_write
+       → [Secure Channel]
+```
+
+### DNS Resolution Configuration  
+🟡 **Local DNS** - Configuración /etc/hosts para desarrollo
+🟡 **Proyecto Domain** - proyecto-telematica.local
+🟡 **Code Updated** - Todos los clientes usan nuevo hostname por defecto
+
+**Configuración Pendiente:**
+1. Ejecutar `./setup_dns.sh` para agregar entrada a /etc/hosts
+2. O agregar manualmente: `127.0.0.1 proyecto-telematica.local` en /etc/hosts
+3. Para EC2: `100.55.9.82 proyecto-telematica.local`
+
+**Archivos Relacionados:**
+- `setup_dns.sh` → Script automatizado de configuración
+- `docs/DNS_SETUP.md` → Guía completa de DNS
+
+**Clientes Actualizados:**
+- `clients/sensor_simulator/sensor_base.py` → Usa proyecto-telematica.local
+- `clients/sensor_simulator/run_sensors.py` → Default host updated
+- `clients/operator_client/operator_client.py` → Usa proyecto-telematica.local
+- `clients/operator_client/operator_gui.py` → Usa proyecto-telematica.local
+
+---
+
+## �📋 Checklist: Verificar lo Creado
 
 - [x] Estructura de carpetas completa
 - [x] Headers C++ con TODOs documentados
@@ -216,6 +262,10 @@ proyecto-telematica/
 - [x] PROJECT_INDEX.md para navegación
 - [x] .gitignore configurado
 - [x] Todos los archivos tienen TODOs claros para implementación
+- [x] **SSL/TLS** - Encriptación en servidor y clientes (OpenSSL)
+- [x] **Certificados** - server.crt y server.key generados (365 días)
+- [x] **DNS** - Script setup_dns.sh creado (docs/DNS_SETUP.md)
+- [x] **Código actualizado** - Todos los clientes usan proyecto-telematica.local
 
 ---
 

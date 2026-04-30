@@ -63,7 +63,7 @@ class SensorHumidity(SensorBase):
 
 if __name__ == '__main__':
     import sys
-    host = sys.argv[1] if len(sys.argv) > 1 else 'localhost'
+    host = sys.argv[1] if len(sys.argv) > 1 else 'proyecto-telematica.local'
     port = int(sys.argv[2]) if len(sys.argv) > 2 else 5000
     
     sensor = SensorHumidity(server_host=host, server_port=port)
