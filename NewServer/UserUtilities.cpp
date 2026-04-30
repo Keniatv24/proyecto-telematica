@@ -33,15 +33,13 @@ UserLoginResult UserUtilities::Login(std::string username, std::string password)
 // --- 2. GET SENSORS ---
 GetSensorsResult UserUtilities::get_sensors(std::string id, std::string token, std::string rtoken) {
     GetSensorsResult result;
-    
-    // Calls TokenValidation returning ValidationResult
+
     ValidationResult auth = TokenValidation(id, token, rtoken);
-    
-    // Check using the .response member
-    if (!auth.response) { 
+
+    if (!auth.response) {
         add("user information was wrong", "0");
         result.response = false;
-        result.readings = {}; 
+        result.readings = {};
         result.message = "Authentication failed: " + auth.message;
         return result;
     }
@@ -50,10 +48,19 @@ GetSensorsResult UserUtilities::get_sensors(std::string id, std::string token, s
     result.message = "readings were sent for ID: " + id;
 
     std::vector<std::string> userSensors = get_sensors_by_user(id);
+
+    int count = 0;
     for (const std::string& sId : userSensors) {
-        result.readings.push_back(get_sensor_details(sId));
+        if (count >= 5) break;
+
+        SensorDetailsResult sensor = get_sensor_details(sId);
+
+        if (!sensor.id.empty() && sensor.id != "0") {
+            result.readings.push_back(sensor);
+            count++;
+        }
     }
-    
+
     add("readings were sent", id);
     return result;
 }
