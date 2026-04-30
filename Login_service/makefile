@@ -1,12 +1,13 @@
 # Compiler and flags
 CXX = g++
 CXXFLAGS = -Wall -Wextra -std=c++17
+# Includes sqlite3 for database management and pthread for concurrent requests
 LDFLAGS = -lsqlite3 -pthread
 
 # Target executable name
 TARGET = login_service
 
-# Source files
+# Source files belonging to the login service logic
 SRCS = Request_Handler.cpp \
        db_manager.cpp \
        Token_verificator.cpp \
