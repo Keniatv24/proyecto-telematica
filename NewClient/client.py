@@ -6,7 +6,7 @@ import time
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
-SERVER_IP = "127.0.0.1"
+SERVER_IP = socket.gethostbyname('niidea.chickenkiller.com')
 PORT = 5000 
 
 class SensorApp:
